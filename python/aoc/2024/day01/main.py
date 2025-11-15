@@ -29,6 +29,6 @@ if __name__ == '__main__':
     for x, y in zip(arr1, arr2):
         result += abs(x-y)
 
-    print(result) #2970687
+    print(result)
 
     calculateSimilarityScore(arr1, arr2)

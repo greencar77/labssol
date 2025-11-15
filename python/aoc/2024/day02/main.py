@@ -51,10 +51,10 @@ print(data)
 result = 0
 for row in data:
     result += isValidStandard(row)
-print(result) #299
+print(result)
 
 #with dampener
 result = 0
 for row in data:
     result += isValidDampener(row)
-print(result) #364
+print(result)
