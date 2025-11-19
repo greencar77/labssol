@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="com.something"
+        xmlns:userns="com.something"
+        elementFormDefault="qualified">
+
+    <element name="userRequest" type="userns:UserRequest"></element>
+    <element name="userResponse" type="userns:UserResponse"></element>
+
+    <complexType name="UserRequest">
+        <sequence>
+            <element name="id" type="int" />
+            <element name="name" type="string" />
+            <element name="active" type="boolean" />
+            <element name="repoAccess" type="boolean" minOccurs="0"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="UserResponse">
+        <sequence>
+            <element name="id" type="int" />
+            <element name="name" type="string" />
+            <element name="gender" type="string" />
+            <element name="created" type="dateTime" />
+            <element name="active" type="boolean" />
+            <element name="repoAccess" type="boolean" minOccurs="0"/>
+            <element name="comp" type="userns:CompType" minOccurs="0"/>
+            <element name="compSeq" type="userns:CompTypeWithSeq" minOccurs="0"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="WarningsType">
+        <sequence>
+            <element name="message" type="string" />
+        </sequence>
+    </complexType>
+
+    <complexType name="ErrorsType">
+        <sequence>
+            <element name="message" type="string" />
+        </sequence>
+    </complexType>
+
+    <complexType name="CompType">
+        <choice>
+            <element name="Warnings" type="userns:WarningsType"></element>
+            <element name="Errors" type="userns:ErrorsType"></element>
+        </choice>
+    </complexType>
+
+    <complexType name="CompTypeWithSeq">
+        <choice>
+            <sequence maxOccurs="2">
+                <element name="Warnings" type="userns:WarningsType"></element>
+                <element name="Errors" type="userns:ErrorsType"></element>
+            </sequence>
+        </choice>
+    </complexType>
+</schema>
