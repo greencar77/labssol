@@ -1,12 +1,12 @@
 package labs.javalang;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
 	public static void main(String[] args) {
 		getAnalysis();
+		playWithNotExistingKey();
 		computeIfAbsentAnalysis();
 	}
 
@@ -76,6 +76,29 @@ public class Main {
 		System.out.println("value=" + value);
 		value = map2.computeIfAbsent(null, x -> (x == null? "null key" : "Some key with a length of " + x.length()) + " " + Math.random());
 		System.out.println("value=" + value);
+	}
+
+	/**
+	 * Q9SK
+	 */
+	private static void playWithNotExistingKey() {
+		System.out.println("playWithNotExistingKey()");
+
+		Map<String, String> map = Repo.getMap();
+
+		String value;
+
+		System.out.println("map.keySet().contains(\"notexisting\")=" + map.keySet().contains("notexisting"));
+
+		value = map.computeIfAbsent("notexisting", x -> "new1" + " " + Math.random());
+		System.out.println(value);
+		System.out.println("map.keySet().contains(\"notexisting\")=" + map.keySet().contains("notexisting"));
+
+		value = map.get("notexisting");
+		System.out.println(value);
+
+		value = map.computeIfAbsent("notexisting", x -> "new2" + " " + Math.random());
+		System.out.println(value);
 	}
 }
 
