@@ -6,7 +6,8 @@ import java.util.Map;
 public class Main {
 	public static void main(String[] args) {
 		getAnalysis();
-		playWithNotExistingKey();
+		tryComputeIfAbsent();
+		tryGetOrDefault();
 		computeIfAbsentAnalysis();
 	}
 
@@ -81,7 +82,7 @@ public class Main {
 	/**
 	 * Q9SK
 	 */
-	private static void playWithNotExistingKey() {
+	private static void tryComputeIfAbsent() {
 		System.out.println("playWithNotExistingKey()");
 
 		Map<String, String> map = Repo.getMap();
@@ -98,6 +99,26 @@ public class Main {
 		System.out.println(value);
 
 		value = map.computeIfAbsent("notexisting", x -> "new2" + " " + Math.random());
+		System.out.println(value);
+	}
+
+	private static void tryGetOrDefault() {
+		System.out.println("playWithGetOrDefault()");
+
+		Map<String, String> map = Repo.getMap();
+
+		String value;
+
+		System.out.println("map.keySet().contains(\"notexisting\")=" + map.keySet().contains("notexisting"));
+
+		value = map.getOrDefault("notexisting", "new1" + " " + Math.random());
+		System.out.println(value);
+		System.out.println("map.keySet().contains(\"notexisting\")=" + map.keySet().contains("notexisting"));
+
+		value = map.get("notexisting");
+		System.out.println(value);
+
+		value = map.getOrDefault("notexisting", "new2" + " " + Math.random());
 		System.out.println(value);
 	}
 }
