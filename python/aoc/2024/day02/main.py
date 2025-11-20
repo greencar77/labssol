@@ -19,42 +19,36 @@ def isValidStandard(row):
 def isValidDampener(row):
     if isValidStandard(row):
         return 1
-    #give another chance
-    for i in range(0, len(row)):
-        shortened = row[0:i] + row[i+1:]
-        if isValidStandard(shortened):
-            return 1
-
-    return 0
+    return any([isValidStandard(row[0:excludeIndex] + row[excludeIndex+1:]) for excludeIndex in range(0, len(row))])
 
 
 def readInput():
     result = []
     with open('input.txt', 'r') as f:
-        lines = [x.strip() for x in f.readlines()]
+        lines = f.read().splitlines()
     for line in lines:
         result.append([int(x) for x in line.split(' ')])
     return result
 
-# data = [
-# [6, 7, 9],
-# [4, 9, 3],
-# [5, 4, 3]
-# ]
 
+if __name__ == '__main__':
+    # data = [
+    # [6, 7, 9],
+    # [4, 9, 3],
+    # [5, 4, 3]
+    # ]
+    data = readInput()
 
-data = readInput()
+    print(data)
 
-print(data)
+    #without dampener
+    result = 0
+    for row in data:
+        result += isValidStandard(row)
+    print(result)
 
-#without dampener
-result = 0
-for row in data:
-    result += isValidStandard(row)
-print(result)
-
-#with dampener
-result = 0
-for row in data:
-    result += isValidDampener(row)
-print(result)
+    #with dampener
+    result = 0
+    for row in data:
+        result += isValidDampener(row)
+    print(result)
