@@ -50,7 +50,7 @@
 
     <complexType name="CompTypeWithSeq">
         <choice>
-            <sequence maxOccurs="2">
+            <sequence maxOccurs="2"><!--QE4Z-->
                 <element name="Warnings" type="userns:WarningsType"></element>
                 <element name="Errors" type="userns:ErrorsType"></element>
             </sequence>
