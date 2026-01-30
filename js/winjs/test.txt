@@ -1,0 +1,2 @@
+Hello from Windows Script Host!
+This was written using pure JavaScript (JScript).
