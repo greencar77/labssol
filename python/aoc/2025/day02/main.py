@@ -1,4 +1,4 @@
-def part1(filename):
+def calculate(filename, invalidityFn):
     with open(filename, 'r') as f:
         input = f.read()
     print(input)
@@ -7,26 +7,20 @@ def part1(filename):
 
     result = 0
     for r in ranges:
-        result += invalidCount(r.split('-'))
-
+        result += invalidityIndex(r.split('-'), invalidityFn)
     print('result', result)
 
 
-def part2(filename):
-    with open(filename, 'r') as f:
-        input = f.read()
-    print(input)
-    ranges = input.split(',')
-    print('ranges count:', len(ranges))
-
-    result = 0
-    for r in ranges:
-        result += invalidCountPart2(r.split('-'))
-
-    print('result', result)
+def invalidityIndex(r, invalidityFn):
+    low = int(r[0])
+    high = int(r[1])
+    res = 0
+    for x in range(low, high + 1):
+        res += invalidityFn(x)
+    return res
 
 
-def invalidity(n):
+def numberInvalidityIndexPart1(n):
     s = str(n)
     if not len(s) % 2 == 0:
         return 0
@@ -34,7 +28,7 @@ def invalidity(n):
     return int(s) if s == half + half else 0
 
 
-def invalidityPart2(n):
+def numberInvalidityIndexPart2(n):
     s = str(n)
     maxPortionLength = len(s) // 2
     for l in range(1, maxPortionLength + 1):
@@ -45,25 +39,12 @@ def invalidityPart2(n):
     return 0
 
 
-def invalidCount(r):
-    low = int(r[0])
-    high = int(r[1])
-    res = 0
-    for x in range(low, high + 1):
-        res += invalidity(x)
-    return res
-
-
-def invalidCountPart2(r):
-    low = int(r[0])
-    high = int(r[1])
-    res = 0
-    for x in range(low, high + 1):
-        res += invalidityPart2(x)
-    return res
-
-
 if __name__ == "__main__":
     filename = 'input2.txt'
-    part1(filename)
-    part2(filename)
+
+    print('Part1 solution:')
+    calculate(filename, numberInvalidityIndexPart1)
+
+    print()
+    print('Part2 solution:')
+    calculate(filename, numberInvalidityIndexPart2)
