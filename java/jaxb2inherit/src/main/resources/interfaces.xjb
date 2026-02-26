@@ -1,0 +1,16 @@
+<jaxb:bindings
+    xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:inheritance="http://jaxb2-commons.dev.java.net/basic/inheritance"
+    jaxb:extensionBindingPrefixes="inheritance"
+    version="2.1">
+
+    <jaxb:bindings schemaLocation="user.xsd">
+        <jaxb:bindings node="//xs:complexType[@name='UserRequest']">
+            <inheritance:implements>jaxb2inherit.NameProvider</inheritance:implements>
+        </jaxb:bindings>
+        <jaxb:bindings node="//xs:complexType[@name='UserResponse']">
+            <inheritance:implements>jaxb2inherit.NameProvider</inheritance:implements>
+        </jaxb:bindings>
+    </jaxb:bindings>
+</jaxb:bindings>
