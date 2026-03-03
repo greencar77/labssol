@@ -1,17 +1,13 @@
 import requests
+import config
 from requests.auth import HTTPBasicAuth
 
-JIRA_DOMAIN = "aaa.bbb.com"
-EMAIL = "email@example.com"
-API_TOKEN = "your_api_token"
-
-url = f"https://{JIRA_DOMAIN}/rest/api/2/search"
+url = f"https://{config.JIRA_DOMAIN}/rest/api/2/search"
 
 # auth = HTTPBasicAuth(EMAIL, API_TOKEN)
 
 print("Enter password:")
 pwd = input()
-from requests.auth import HTTPBasicAuth
 auth = HTTPBasicAuth('usernamex', pwd)
 
 headers = {
