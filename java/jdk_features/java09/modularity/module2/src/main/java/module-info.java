@@ -1,0 +1,3 @@
+module mymodsecond {
+    requires mymodone;
+}
