@@ -37,4 +37,10 @@ public class CustomerOrderController {
 
         return "Customer and order created";
     }
+
+    @DeleteMapping("/orders/{id}")
+    public String deleteOrder(@PathVariable Long id) {
+        service.deleteOrder(id);
+        return "Order deleted";
+    }
 }

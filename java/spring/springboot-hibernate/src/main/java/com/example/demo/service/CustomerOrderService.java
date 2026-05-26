@@ -53,4 +53,9 @@ public class CustomerOrderService {
 
         return customer;
     }
+
+    @Transactional
+    public void deleteOrder(Long orderId) {
+        orderRepository.deleteById(orderId);
+    }
 }
