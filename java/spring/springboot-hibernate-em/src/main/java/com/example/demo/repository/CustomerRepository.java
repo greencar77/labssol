@@ -12,7 +12,7 @@ public class CustomerRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
-    @Transactional
+    @Transactional //Q7R4
     public Customer find(Long id) {
         return entityManager.find(Customer.class, id);
     }

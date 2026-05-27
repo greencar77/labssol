@@ -17,7 +17,7 @@ public class GeneralService {
         this.orderRepository = o;
     }
 
-    @Transactional
+    @Transactional //Q7R4
     public Customer getCustomer(Long id) {
         return customerRepository.find(id);
     }
@@ -28,7 +28,7 @@ public class GeneralService {
         return customer.getOrders();
     }
 
-    @Transactional
+    @Transactional //QFLR
     public void updateCustomerAndOrder(Long customerId, Long orderId, String email, Double amount) {
         Customer c = customerRepository.find(customerId);
         Order o = orderRepository.find(orderId);
