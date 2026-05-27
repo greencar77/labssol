@@ -6,7 +6,7 @@
     <version>3.3.0</version>
   </parent>
   <groupId>com.example</groupId>
-  <artifactId>springboot-hibernate</artifactId>
+  <artifactId>springboot-hibernate-jpa</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <properties>
     <java.version>17</java.version>
