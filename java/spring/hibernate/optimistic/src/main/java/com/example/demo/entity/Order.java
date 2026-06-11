@@ -1,7 +1,5 @@
 package com.example.demo.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 
 @Entity
@@ -14,7 +12,6 @@ public class Order {
     private Double amount;
     @ManyToOne
     @JoinColumn(name = "customer_id")
-    @JsonIgnore
     private VersionedCustomer customer;
 
     public Long getId() {
