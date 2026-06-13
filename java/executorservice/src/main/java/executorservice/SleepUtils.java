@@ -1,4 +1,4 @@
-package labs.javalang;
+package executorservice;
 
 import java.util.concurrent.TimeUnit;
 

@@ -1,4 +1,4 @@
-package hashmapthread;
+package executorservice;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import static labs.javalang.SleepUtils.sleep;
+import static executorservice.SleepUtils.sleep;
 
 public class GeneralTest {
 
