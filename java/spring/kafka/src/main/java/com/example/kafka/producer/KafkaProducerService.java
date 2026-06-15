@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
-import static com.example.kafka.KafkaTopicConfig.TOPIC;
+import static com.example.kafka.KafkaTopicConfig.DEMO_TOPIC;
 
 @Service
 @EnableScheduling
@@ -27,6 +27,6 @@ public class KafkaProducerService {
     public void sendMessage() {
         String message = "Message generated at " + System.currentTimeMillis() + " with UUID: " + UUID.randomUUID();
         logger.info("Producing message: {}", message);
-        this.kafkaTemplate.send(TOPIC, message);
+        this.kafkaTemplate.send(DEMO_TOPIC, message);
     }
 }

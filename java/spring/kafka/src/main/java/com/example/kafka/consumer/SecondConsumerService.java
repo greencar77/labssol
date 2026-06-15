@@ -5,14 +5,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
-import static com.example.kafka.KafkaTopicConfig.TOPIC;
+import static com.example.kafka.KafkaTopicConfig.DEMO_TOPIC;
 
 @Service
 public class SecondConsumerService { //QSNB
 
     private static final Logger logger = LoggerFactory.getLogger(SecondConsumerService.class);
 
-    @KafkaListener(topics = TOPIC, groupId = "demo-group2")
+    @KafkaListener(topics = DEMO_TOPIC, groupId = "demo-group2")
     public void consume(String message) {
         logger.info("Consumed message: {}", message);
     }

@@ -8,11 +8,11 @@ import org.springframework.kafka.config.TopicBuilder;
 @Configuration
 public class KafkaTopicConfig {
 
-    public static final String TOPIC = "demo-topic";
+    public static final String DEMO_TOPIC = "demo-topic";
 
     @Bean
     public NewTopic demoTopic() {
-        return TopicBuilder.name(TOPIC)
+        return TopicBuilder.name(DEMO_TOPIC)
                 .partitions(1)
                 .replicas(1)
                 .build();
