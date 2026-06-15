@@ -9,12 +9,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+import static com.example.kafka.KafkaTopicConfig.TOPIC;
+
 @Service
 @EnableScheduling
 public class KafkaProducerService {
 
     private static final Logger logger = LoggerFactory.getLogger(KafkaProducerService.class);
-    private static final String TOPIC = "demo-topic";
 
     private final KafkaTemplate<String, String> kafkaTemplate;
 
