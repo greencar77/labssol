@@ -1,0 +1,7 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://example.com">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns:Item1>value1</ns:Item1>
+        <ns:Item2>value2</ns:Item2>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

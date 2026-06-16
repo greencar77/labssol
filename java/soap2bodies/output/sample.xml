@@ -1,0 +1,19 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header>
+        <eee:LocalPart xmlns:eee="http://eee">
+            <rt:eee xmlns="http://rt" xmlns:rt="http://rt">valuex</rt:eee>
+            <empty xmlns="http://empty">valueY</empty>
+            <emptyNull xmlns="http://empty2">valueY</emptyNull>
+            <li:Limbo xmlns:li="http://li"/>
+            <pref:qqq xmlns="http://pref" xmlns:jjj="http://jjj" xmlns:pref="http://pref">valuew</pref:qqq>
+            <bgh>factory.createElement(name)</bgh>
+        </eee:LocalPart>
+        <q:Qwer xmlns:q="http://q">
+            <u:QwerSub xmlns:u="http://u">QwerSubValue</u:QwerSub>
+        </q:Qwer>
+        <he:He xmlns:he="http://he">
+            <cc:Alpha xmlns:cc="http://cc">AlphaValue</cc:Alpha>
+        </he:He>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body/>
+</SOAP-ENV:Envelope>
