@@ -1,0 +1,3 @@
+QVZ7
+
+newFixedThreadPool - number of simultaneous threads is limited
