@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Item List</h1>
+        <ul id="item-list">
+            <li class="item" data-id="1">Item 1</li>
+            <li class="item" data-id="2">Item 2</li>
+            <li class="item" data-id="3">Item 3</li>
+            <li class="item" data-id="4">Item 4</li>
+        </ul>
+    </div>
+
+    <!-- Popup Overlay -->
+    <div id="overlay" class="overlay">
+        <div id="popup" class="popup">
+            <h2 id="popup-title">Popup Title</h2>
+            <div id="popup-content">
+                <p>Links for this item:</p>
+                <ul id="popup-links">
+                    <!-- Links will be injected here -->
+                </ul>
+            </div>
+            <button id="close-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
