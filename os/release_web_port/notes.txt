@@ -1,0 +1,8 @@
+> netstat -ano | findstr :8080
+  TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING       13140
+  TCP    [::]:8080              [::]:0                 LISTENING       13140
+
+The last number is the PID
+
+> taskkill /PID 13140 /F
+SUCCESS: The process with PID 13140 has been terminated.
