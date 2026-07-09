@@ -1,0 +1,11 @@
+update .gitignore
+
+commit .gitignore
+
+> git rm -r --cached output
+rm 'output/ccc.txt'
+
+> git commit -m "Stop tracking 'output' folder"
+[master 96a81ef] Stop tracking 'output' folder
+ 1 file changed, 3 deletions(-)
+ delete mode 100644 output/ccc.txt

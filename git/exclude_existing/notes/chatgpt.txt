@@ -1,0 +1,42 @@
+If a folder was added to .gitignore after Git was already tracking its files, .gitignore won't stop tracking them automatically. It only prevents new, untracked files from being added.
+
+To fix this:
+
+Verify your .gitignore rule. For example:
+build/
+
+or
+
+path/to/folder/
+Remove the folder from Git's index (without deleting it from your disk):
+git rm -r --cached path/to/folder
+Commit the change:
+git commit -m "Stop tracking ignored folder"
+
+From then on, changes inside that folder will be ignored.
+
+If you want to stop tracking everything that is now ignored
+
+You can refresh the index:
+
+git rm -r --cached .
+git add .
+git commit -m "Refresh tracked files according to .gitignore"
+
+This removes all files from the index and re-adds only those that are not ignored.
+
+Check whether a file is actually ignored
+
+If it still isn't working, run:
+
+git check-ignore -v path/to/folder/file.txt
+
+This shows which .gitignore rule (and which .gitignore file) is responsible for ignoring the file. If it produces no output, your ignore pattern isn't matching.
+
+If you share:
+
+your .gitignore entry,
+the folder path,
+and the output of git status,
+
+I can help identify why it's still being tracked.
