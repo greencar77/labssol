@@ -1,2 +1,5 @@
 completed: 2026-06-05
 labId: DL8HJG
+hibernate:
+  emMethods:
+    - find

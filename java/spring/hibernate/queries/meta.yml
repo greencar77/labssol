@@ -1,2 +1,7 @@
 completed: 2026-07-10
 labId: 8U28QN
+hibernate:
+  emMethods:
+    - getCriteriaBuilder
+    - createQuery
+    - createNativeQuery
