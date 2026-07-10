@@ -1,7 +1,7 @@
 package com.example.sakila;
 
 import com.example.sakila.entity.Actor;
-import com.example.sakila.entity.Film;
+import com.example.sakila.entity.City;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
@@ -86,5 +86,23 @@ public class EntityManagerQueryTest {
         // This is just to demonstrate the EntityManager capability.
         // For example: entityManager.createStoredProcedureQuery("some_proc_name")
         System.out.println("EntityManager supports stored procedures via createStoredProcedureQuery()");
+    }
+
+    @Test
+    public void testJoinCityCountry() {
+        System.out.println("--- EntityManager: Testing Join (City and Country) ---");
+
+        // Demonstration of a query joining two tables (City and Country)
+        // Returning city list ordered by country name and then city name
+        TypedQuery<City> query = entityManager.createQuery(
+                "SELECT c FROM City c JOIN FETCH c.country co ORDER BY co.country ASC, c.city ASC", City.class);
+        query.setMaxResults(10);
+
+        List<City> cities = query.getResultList();
+
+        assertFalse(cities.isEmpty());
+        for (City city : cities) {
+            System.out.println("City: " + city.getCity() + ", Country: " + city.getCountry().getCountry());
+        }
     }
 }
