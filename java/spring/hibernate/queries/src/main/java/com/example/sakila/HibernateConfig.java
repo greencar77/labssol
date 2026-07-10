@@ -6,6 +6,7 @@ import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
@@ -18,17 +19,26 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 public class HibernateConfig {
+    private static final String USERNAME = System.getenv("DB_USERNAME");
+    private static final String PASSWORD = System.getenv("DB_PASSWORD");
+
+    static {
+        if (USERNAME == null) {
+            throw new RuntimeException("DB credentials aren't set in environment variables!");
+        }
+    }
 
     @Bean
     public DataSource dataSource() {
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl("jdbc:mysql://localhost:3306/sakila");
-        config.setUsername("root");
-        config.setPassword("xxx");
+        config.setUsername(USERNAME);
+        config.setPassword(PASSWORD);
         config.setDriverClassName("com.mysql.cj.jdbc.Driver");
         return new HikariDataSource(config);
     }
 
+    @Primary
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
