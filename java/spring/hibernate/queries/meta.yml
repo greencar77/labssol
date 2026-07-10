@@ -5,3 +5,4 @@ hibernate:
     - getCriteriaBuilder
     - createQuery
     - createNativeQuery
+    - createNamedQuery
