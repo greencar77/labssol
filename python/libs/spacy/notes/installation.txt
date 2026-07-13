@@ -1,0 +1,63 @@
+python3 -m spacy download en_core_web_sm
+
+
+> <skipped>python.exe -m spacy info
+
+============================== Info about spaCy ==============================
+
+spaCy version    3.8.13
+Location         <python path>\Lib\site-packages\spacy
+Platform         Windows-11-10.0.26200-SP0
+Python version   3.14.0
+Pipelines
+
+
+
+
+Terminal
+> py -m pip install en-core-web-sm
+ERROR: Could not find a version that satisfies the requirement en-core-web-sm (from versions: none)
+
+[notice] A new release of pip is available: 25.2 -> 26.1.2
+[notice] To update, run: <skipped>python.exe -m pip install --upgrade pip
+ERROR: No matching distribution found for en-core-web-sm
+
+
+
+
+
+py -m spacy download en_core_web_sm
+
+✘ No package installer found
+spaCy requires either pip or uv to download models. Please install one of them
+and try again.
+
+
+
+
+py -m pip install en-core-web-sm --find-links https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+
+
+
+> py -m spacy info en_core_web_sm
+
+==================== Info about pipeline 'en_core_web_sm' ====================
+
+lang                en
+name                core_web_sm
+version             3.8.0
+description         English pipeline optimized for CPU. Components: tok2vec, tagger, parser, senter, ner, attribute_ruler, lemmatizer.
+author              Explosion
+email               contact@explosion.ai
+url                 https://explosion.ai
+license             MIT
+spacy_version       >=3.8.0,<3.9.0
+spacy_git_version   5010fcbd3
+vectors             {'width': 0, 'vectors': 0, 'keys': 0, 'name': None}
+pipeline            ['tok2vec', 'tagger', 'parser', 'attribute_ruler', 'lemmatizer', 'ner']
+components          ['tok2vec', 'tagger', 'parser', 'senter', 'attribute_ruler', 'lemmatizer', 'ner']
+disabled            ['senter']
+sources             [{'name': 'OntoNotes 5', 'url': 'https://catalog.ldc.upenn.edu/LDC2013T19', 'license': 'commercial (licensed by Explosion)', 'author': 'Ralph Weischedel, Martha Palmer, Mitchell Marcus, Eduard Hovy, Sameer Pradhan, Lance Ramshaw, Nianwen Xue, Ann Taylor, Jeff Kaufman, Michelle Franchini, Mohammed El-Bachouti, Robert Belvin, Ann Houston'}, {'name': 'ClearNLP Constituent-to-Dependency Conversion', 'url': 'https://github.com/clir/clearnlp-guidelines/blob/master/md/components/dependency_conversion.md', 'license': 'Citation provided for reference, no code packaged with model', 'author': 'Emory University'}, {'name': 'WordNet 3.0', 'url': 'https://wordnet.princeton.edu/', 'author': 'Princeton University', 'license': 'WordNet 3.0 License'}]
+requirements        []
+source              <skipped>\Lib\site-packages\en_core_web_sm
+

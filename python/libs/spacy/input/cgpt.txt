@@ -1,0 +1,126 @@
+can spacy detect phrasal verbs?
+
+Yes, but not directly. spaCy does not have a built-in feature that labels "this is a phrasal verb." However, it provides enough linguistic information (POS tags and dependency parses) to detect many phrasal verbs yourself.
+
+For example:
+
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+
+doc = nlp("She turned the light off.")
+
+for token in doc:
+    print(token.text, token.pos_, token.dep_, token.head.text)
+
+You will typically see something like:
+
+turned  VERB  ROOT    turned
+light   NOUN  dobj    turned
+off     ADP   prt     turned
+
+The important part is:
+
+turned → VERB
+off → dependency label prt (particle)
+
+The dependency label prt (particle) is spaCy's clue that turn off is a phrasal verb.
+
+Example: finding phrasal verbs
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+
+doc = nlp("She turned the light off and picked her son up.")
+
+for token in doc:
+    if token.dep_ == "prt":
+        print(token.head.text, token.text)
+
+Output:
+
+turned off
+picked up
+Even when words are separated
+
+Sentence:
+
+She picked her daughter up.
+
+The dependency tree still links up to picked:
+
+picked
+├── daughter
+└── up (prt)
+
+So you can recover the phrasal verb even though the words are not adjacent.
+
+Inseparable phrasal verbs
+
+Examples:
+
+look after
+run into
+come across
+
+These are harder.
+
+For
+
+She looked after the baby.
+
+after is usually parsed as a preposition, not a particle:
+
+looked  VERB
+after   prep
+baby    pobj
+
+So after is not prt.
+
+Therefore
+
+spaCy easily detects:
+
+turn off
+pick up
+put away
+throw out
+give back
+
+because they contain particles (prt).
+
+It does not automatically recognize:
+
+look after
+run into
+come across
+get over
+
+as phrasal verbs, because those are analyzed as verb + preposition.
+
+Best solution
+
+Many NLP systems combine:
+
+spaCy dependency parsing
+a dictionary of phrasal verbs
+
+For example:
+
+PHRASAL_VERBS = {
+    ("look", "after"),
+    ("run", "into"),
+    ("come", "across"),
+    ("get", "over"),
+    ("pick", "up"),
+    ("turn", "off"),
+}
+
+Then use spaCy to find the verb and its prt or prep dependents, and check whether the (lemma, particle/preposition) pair is in your dictionary.
+
+This approach is much more reliable than relying on dependency labels alone.
+
+Summary
+✅ Separable phrasal verbs (e.g., turn off, pick up) are relatively easy to detect because spaCy labels the particle with the prt dependency.
+⚠️ Inseparable phrasal verbs (e.g., look after, run into) are not explicitly identified as phrasal verbs; the second word is usually analyzed as a preposition.
+✅ For robust detection, the most effective approach is to use spaCy's parsing together with a curated list of known phrasal verbs.

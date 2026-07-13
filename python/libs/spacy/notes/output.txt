@@ -1,0 +1,2 @@
+She found her keys, opened the door, turned on the lights, and sat on the couch.
+['couch', 'door', 'find', 'key', 'light', 'open', 'sit', 'turn']
