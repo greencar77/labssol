@@ -1,0 +1,14 @@
+Answer to QO32
+https://www.jwt.io/
+
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzg0MDM2NDcwLCJleHAiOjE3ODQwNzI0NzB9.efcm89583d6Wxw5myjYGJcsbhREKQHPhta_VJSDxdaI
+
+{
+  "alg": "HS256"
+}
+
+{
+  "sub": "user",
+  "iat": 1784036470,
+  "exp": 1784072470
+}
