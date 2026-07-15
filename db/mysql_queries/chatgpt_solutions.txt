@@ -1,0 +1,115 @@
+Below are one possible set of solutions for each exercise. There are often multiple correct ways to write these queries.
+
+Exercise 1: Top Customers by Rentals
+SELECT
+    c.customer_id,
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    COUNT(r.rental_id) AS rental_count
+FROM customer c
+JOIN rental r
+    ON c.customer_id = r.customer_id
+GROUP BY
+    c.customer_id,
+    c.first_name,
+    c.last_name
+ORDER BY rental_count DESC
+LIMIT 10;
+Exercise 2: Films Never Rented
+SELECT DISTINCT
+    f.title,
+    f.release_year,
+    f.rental_rate
+FROM film f
+LEFT JOIN inventory i
+    ON f.film_id = i.film_id
+LEFT JOIN rental r
+    ON i.inventory_id = r.inventory_id
+WHERE r.rental_id IS NULL
+ORDER BY f.title;
+Exercise 3: Revenue by Category
+SELECT
+    c.name AS category,
+    COUNT(r.rental_id) AS rentals,
+    SUM(p.amount) AS revenue
+FROM category c
+JOIN film_category fc
+    ON c.category_id = fc.category_id
+JOIN inventory i
+    ON fc.film_id = i.film_id
+JOIN rental r
+    ON i.inventory_id = r.inventory_id
+JOIN payment p
+    ON r.rental_id = p.rental_id
+GROUP BY
+    c.category_id,
+    c.name
+ORDER BY revenue DESC;
+Exercise 4: Actors in the Most Films
+SELECT
+    CONCAT(a.first_name, ' ', a.last_name) AS actor_name,
+    COUNT(fa.film_id) AS film_count
+FROM actor a
+JOIN film_actor fa
+    ON a.actor_id = fa.actor_id
+GROUP BY
+    a.actor_id,
+    a.first_name,
+    a.last_name
+ORDER BY film_count DESC
+LIMIT 5;
+Exercise 5: Customers Who Rented From Multiple Stores
+SELECT
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    COUNT(DISTINCT i.store_id) AS stores_visited
+FROM customer c
+JOIN rental r
+    ON c.customer_id = r.customer_id
+JOIN inventory i
+    ON r.inventory_id = i.inventory_id
+GROUP BY
+    c.customer_id,
+    c.first_name,
+    c.last_name
+HAVING COUNT(DISTINCT i.store_id) > 1
+ORDER BY customer_name;
+Bonus Challenge: Favorite Film Category per Customer
+WITH category_counts AS (
+    SELECT
+        c.customer_id,
+        CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+        cat.name AS category,
+        COUNT(*) AS rentals
+    FROM customer c
+    JOIN rental r
+        ON c.customer_id = r.customer_id
+    JOIN inventory i
+        ON r.inventory_id = i.inventory_id
+    JOIN film_category fc
+        ON i.film_id = fc.film_id
+    JOIN category cat
+        ON fc.category_id = cat.category_id
+    GROUP BY
+        c.customer_id,
+        c.first_name,
+        c.last_name,
+        cat.category_id,
+        cat.name
+),
+ranked_categories AS (
+    SELECT
+        *,
+        RANK() OVER (
+            PARTITION BY customer_id
+            ORDER BY rentals DESC
+        ) AS rank_num
+    FROM category_counts
+)
+SELECT
+    customer_name,
+    category,
+    rentals
+FROM ranked_categories
+WHERE rank_num = 1
+ORDER BY customer_name;
+
+This returns all favorite categories for each customer. If there's a tie (e.g., a customer rented 10 Action and 10 Comedy films), both categories are returned.
