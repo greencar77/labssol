@@ -3,3 +3,6 @@ labId: DL8HJG
 hibernate:
   emMethods:
     - find
+    - persist
+    - merge
+    - remove

@@ -1,2 +1,8 @@
 completed: 2026-05-27
 labId: G14DCI
+hibernate:
+  emMethods:
+    - find
+    - persist
+    - merge
+    - remove
