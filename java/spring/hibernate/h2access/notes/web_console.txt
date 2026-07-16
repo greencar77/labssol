@@ -1,0 +1,9 @@
+Answer to QBQW
+
+Not working for current project because application isn't published to web.
+
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+
+
+http://localhost:8080/h2-console

@@ -1,0 +1,15 @@
+Answer to QYQP
+
+spring.datasource.url=jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+
++ TCP bean `H2Config` is required.
+
+jdbc:h2:tcp://localhost:9092/mem:testdb
+
+
+
+DBeaver:
+Driver: H2 Embedded
+URL: jdbc:h2:tcp://localhost:9092/mem:testdb
+
+Tests showed that Driver is irrelevant - it was possible to connect with any of Embedded drivers. But error was thrown during second connection (after disconnection).

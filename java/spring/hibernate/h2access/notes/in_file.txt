@@ -1,0 +1,9 @@
+Answer to QOPJ
+
+#C:\Users\<your-user>\testdb.mv.db
+spring.datasource.url=jdbc:h2:file:~/testdb
+
+
+DBeaver:
+Driver: "H2 Embedded V.2.4.+"
+Host: C:\Users\<your-user>\testdb.mv.db

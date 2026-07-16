@@ -1,0 +1,8 @@
+completed: 2026-07-16
+labId: JURSPC
+hibernate:
+  emMethods:
+    - flush
+    - persist
+    - clear
+    - createQuery
