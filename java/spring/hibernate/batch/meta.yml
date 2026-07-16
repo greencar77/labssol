@@ -1,0 +1,7 @@
+completed: 2026-07-16
+labId: 293D4S
+hibernate:
+  emMethods:
+    - createQuery
+    - flush
+    - clear
