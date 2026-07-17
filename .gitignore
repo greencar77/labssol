@@ -1,10 +1,20 @@
+**/_incubator
+**/local
+
+#Eclipse
 **/.classpath
 **/.project
 **/.settings
-**/_incubator
+
+#IntelliJ
 **/.idea
 **/*.iml
+
+#Maven
 **/target
-**/local
+
+#Gradle
+**/.gradle
+**/build
 
 
