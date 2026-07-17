@@ -1,0 +1,2 @@
+createdb -U postgres dvdrental
+psql -U postgres -d dvdrental -f <path>\tmp\dvdrental.sql
