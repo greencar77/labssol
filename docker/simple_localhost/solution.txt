@@ -1,0 +1,163 @@
+>docker pull nginx:alpine
+alpine: Pulling from library/nginx
+d0008c891db4: Pull complete
+46519e7231d2: Pull complete
+62bec68d7c31: Pull complete
+390dc935348d: Pull complete
+1223f016b4e4: Pull complete
+55afa1ecc21d: Pull complete
+46f977ee452f: Pull complete
+3cd534fe98c6: Pull complete
+139c372786b9: Download complete
+cd757d6c129e: Download complete
+Digest: sha256:4a73073bd557c65b759505da037898b61f1be6cbcc3c2c3aeac22d2a470c1752
+Status: Downloaded newer image for nginx:alpine
+docker.io/library/nginx:alpine
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview nginx:alpine
+	
+	
+> docker run --rm -d \
+  --name html-demo \
+  -p 8080:80 \
+  -v "$PWD":/usr/share/nginx/html:ro \
+  nginx:alpine
+
+go to tmp folder and then run
+
+  
+$ docker run --rm -d   --name html-demo   -p 8080:80   -v "$PWD":/usr/share/nginx/html:ro   nginx:alpine
+d3595b7881fec1fc401430bd82b4cc9836f3d7e5332e58ccf24f0858d2a4797b
+
+
+
+http://localhost:8080/
+
+Welcome to nginx!
+If you see this page, nginx is successfully installed and working. Further configuration is required for the web server, reverse proxy, API gateway, load balancer, content cache, or other features.
+
+For online documentation and support please refer to nginx.org.
+To engage with the community please visit community.nginx.org.
+For enterprise grade support, professional services, additional security features and capabilities please refer to f5.com/nginx.
+
+Thank you for using nginx.
+
+
+$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                                     NAMES
+d3595b7881fe   nginx:alpine   "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   html-demo
+
+$ docker images
+                                                                                                                                                        i Info →   U  In Use
+IMAGE                             ID             DISK USAGE   CONTENT SIZE   EXTRA
+confluentinc/cp-kafka:7.4.4       c0224a1adf7a       1.28GB          444MB    U
+confluentinc/cp-zookeeper:7.4.4   35de034f5b82       1.28GB          444MB    U
+docker/welcome-to-docker:latest   c4d56c24da4f       22.2MB         6.03MB    U
+hello-world:latest                96498ffd522e       25.9kB         9.49kB    U
+mysql:8                           d36d39a64cd1       1.12GB          255MB    U
+mysql:8.4.10                      d36d39a64cd1       1.12GB          255MB    U
+mysql:latest                      ad88e1c86cbf       1.28GB          288MB
+nginx:alpine                      4a73073bd557       93.6MB           27MB    U
+
+
+$ docker stop html-demo
+html-demo
+
+
+$ docker history nginx:alpine
+IMAGE          CREATED       CREATED BY                                      SIZE      COMMENT
+4a73073bd557   4 days ago    RUN /bin/sh -c set -x     && apkArch="$(cat …   51.8MB    buildkit.dockerfile.v0
+<missing>      4 days ago    ENV ACME_VERSION=0.4.1                          0B        buildkit.dockerfile.v0
+<missing>      4 days ago    ENV NJS_RELEASE=1                               0B        buildkit.dockerfile.v0
+<missing>      4 days ago    ENV NJS_VERSION=1.0.0                           0B        buildkit.dockerfile.v0
+<missing>      4 days ago    CMD ["nginx" "-g" "daemon off;"]                0B        buildkit.dockerfile.v0
+<missing>      4 days ago    STOPSIGNAL SIGQUIT                              0B        buildkit.dockerfile.v0
+<missing>      4 days ago    EXPOSE map[80/tcp:{}]                           0B        buildkit.dockerfile.v0
+<missing>      4 days ago    ENTRYPOINT ["/docker-entrypoint.sh"]            0B        buildkit.dockerfile.v0
+<missing>      4 days ago    COPY 30-tune-worker-processes.sh /docker-ent…   16.4kB    buildkit.dockerfile.v0
+<missing>      4 days ago    COPY 20-envsubst-on-templates.sh /docker-ent…   12.3kB    buildkit.dockerfile.v0
+<missing>      4 days ago    COPY 15-local-resolvers.envsh /docker-entryp…   12.3kB    buildkit.dockerfile.v0
+<missing>      4 days ago    COPY 10-listen-on-ipv6-by-default.sh /docker…   12.3kB    buildkit.dockerfile.v0
+<missing>      4 days ago    COPY docker-entrypoint.sh / # buildkit          8.19kB    buildkit.dockerfile.v0
+<missing>      4 days ago    RUN /bin/sh -c set -x     && addgroup -g 101…   5.64MB    buildkit.dockerfile.v0
+<missing>      4 days ago    ENV DYNPKG_RELEASE=1                            0B        buildkit.dockerfile.v0
+<missing>      4 days ago    ENV PKG_RELEASE=1                               0B        buildkit.dockerfile.v0
+<missing>      4 days ago    ENV NGINX_VERSION=1.31.3                        0B        buildkit.dockerfile.v0
+<missing>      4 days ago    LABEL maintainer=NGINX Docker Maintainers <d…   0B        buildkit.dockerfile.v0
+<missing>      4 weeks ago   CMD ["/bin/sh"]                                 0B        buildkit.dockerfile.v0
+<missing>      4 weeks ago   ADD alpine-minirootfs-3.24.1-x86_64.tar.gz /…   9.07MB    buildkit.dockerfile.v0
+
+
+$ docker image inspect nginx:alpine
+[
+    {
+        "Id": "sha256:4a73073bd557c65b759505da037898b61f1be6cbcc3c2c3aeac22d2a470c1752",
+        "RepoTags": [
+            "nginx:alpine"
+        ],
+        "RepoDigests": [
+            "nginx@sha256:4a73073bd557c65b759505da037898b61f1be6cbcc3c2c3aeac22d2a470c1752"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-07-15T23:57:33.943663441Z",
+        "Config": {
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NGINX_VERSION=1.31.3",
+                "PKG_RELEASE=1",
+                "DYNPKG_RELEASE=1",
+                "NJS_VERSION=1.0.0",
+                "NJS_RELEASE=1",
+                "ACME_VERSION=0.4.1"
+            ],
+            "Entrypoint": [
+                "/docker-entrypoint.sh"
+            ],
+            "Cmd": [
+                "nginx",
+                "-g",
+                "daemon off;"
+            ],
+            "WorkingDir": "/",
+            "Labels": {
+                "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>"
+            },
+            "StopSignal": "SIGQUIT"
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 26079904,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
+                "sha256:548098c6fe2fca0719cdfb84f13de923748e311ec743235b44f4b4d5fb1bf7b4",
+                "sha256:b08673863e998a5b51fb20f896308adeb46667666ebb9ebb8fcf4094f363b667",
+                "sha256:80b3a9bcaabdfe84da35652e3a9d2b6f41cb940a69b44e78eb3c73853b757d50",
+                "sha256:f0cb70a55fc9da1ab4685457b07861b6f8a3e9da40e6f007412d38e45686a31c",
+                "sha256:ba418be4ca73f2e644b01101aaf3647140cfd1407d4d01f762a78896c2f1bdff",
+                "sha256:d53e22d501e6f52a15053d3ba14e286af2271838c34bf9754a777381e77a7bfd",
+                "sha256:fbd591214bfc6863ddb2bada420ddcfa29b96a7593286fefb75b3ed2e2c78216"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-07-20T11:59:48.116669923Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:4a73073bd557c65b759505da037898b61f1be6cbcc3c2c3aeac22d2a470c1752",
+            "size": 10333
+        },
+        "Identity": {
+            "Pull": [
+                {
+                    "Repository": "docker.io/library/nginx"
+                }
+            ]
+        }
+    }
+]
