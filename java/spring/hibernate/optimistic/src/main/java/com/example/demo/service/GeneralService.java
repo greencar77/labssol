@@ -1,7 +1,9 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.*;
-import com.example.demo.repository.*;
+import com.example.demo.entity.Order;
+import com.example.demo.entity.VersionedCustomer;
+import com.example.demo.repository.CustomerRepository;
+import com.example.demo.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
