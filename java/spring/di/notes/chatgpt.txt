@@ -1,0 +1,237 @@
+In Spring, bean injection (Dependency Injection, or DI) is the process of providing one bean to another. There are several ways to inject dependencies, each with its own use cases.
+
+1. Constructor Injection (Recommended)
+
+Dependencies are provided through the constructor.
+
+@Component
+public class OrderService {
+
+    private final PaymentService paymentService;
+
+    public OrderService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+}
+
+With Spring 4.3+, if there's only one constructor, @Autowired is optional:
+
+@Component
+public class OrderService {
+
+    private final PaymentService paymentService;
+
+    public OrderService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+}
+Pros
+Promotes immutable objects (final fields).
+Makes required dependencies explicit.
+Easier to test.
+Prevents partially initialized objects.
+Cons
+Constructors can become long if a class has many dependencies (often a design smell).
+2. Setter Injection
+
+Dependencies are injected through setter methods.
+
+@Component
+public class OrderService {
+
+    private PaymentService paymentService;
+
+    @Autowired
+    public void setPaymentService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+}
+Pros
+Good for optional dependencies.
+Dependencies can be changed after object creation.
+Cons
+Object may be incomplete if setter isn't called.
+Less suitable for mandatory dependencies.
+3. Field Injection (Not Recommended)
+
+Dependencies are injected directly into fields.
+
+@Component
+public class OrderService {
+
+    @Autowired
+    private PaymentService paymentService;
+}
+Pros
+Minimal boilerplate.
+Quick for prototypes.
+Cons
+Hard to unit test.
+Cannot make fields final.
+Hidden dependencies.
+Requires reflection.
+
+This style is generally discouraged in production code.
+
+4. Method Injection
+
+Spring injects dependencies into an arbitrary method.
+
+@Component
+public class OrderService {
+
+    private PaymentService paymentService;
+
+    @Autowired
+    public void initialize(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+}
+
+Useful when initialization requires multiple dependencies.
+
+Injecting Multiple Beans
+
+Suppose you have:
+
+@Component
+class PaypalPaymentService implements PaymentService {}
+
+@Component
+class StripePaymentService implements PaymentService {}
+
+Spring won't know which one to inject unless you specify.
+
+5. @Qualifier
+
+Choose a specific bean.
+
+@Component
+public class OrderService {
+
+    private final PaymentService paymentService;
+
+    public OrderService(
+        @Qualifier("stripePaymentService")
+        PaymentService paymentService) {
+
+        this.paymentService = paymentService;
+    }
+}
+6. @Primary
+
+Mark one bean as the default.
+
+@Component
+@Primary
+class StripePaymentService implements PaymentService {}
+
+@Component
+class PaypalPaymentService implements PaymentService {}
+
+Now:
+
+public OrderService(PaymentService paymentService) {
+    this.paymentService = paymentService;
+}
+
+injects StripePaymentService.
+
+7. Collection Injection
+
+Inject all beans of the same type.
+
+List
+@Component
+public class PaymentProcessor {
+
+    public PaymentProcessor(List<PaymentService> services) {
+        services.forEach(System.out::println);
+    }
+}
+Map
+@Component
+public class PaymentProcessor {
+
+    public PaymentProcessor(Map<String, PaymentService> services) {
+        services.forEach((name, service) ->
+            System.out.println(name));
+    }
+}
+
+The key is the bean name.
+
+Set
+public PaymentProcessor(Set<PaymentService> services) {
+}
+Lazy Injection
+
+Delay bean creation until needed.
+
+@Component
+public class OrderService {
+
+    private final PaymentService paymentService;
+
+    public OrderService(@Lazy PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+}
+
+Useful for:
+
+Breaking circular dependencies
+Expensive bean initialization
+Optional Injection
+Using Optional
+public OrderService(Optional<DiscountService> discountService) {
+}
+Using @Autowired(required = false)
+@Autowired(required = false)
+private DiscountService discountService;
+Using ObjectProvider
+@Component
+public class OrderService {
+
+    private final ObjectProvider<DiscountService> provider;
+
+    public OrderService(ObjectProvider<DiscountService> provider) {
+        this.provider = provider;
+    }
+
+    public void process() {
+        DiscountService service = provider.getIfAvailable();
+    }
+}
+
+Useful when the dependency is optional or should be created on demand.
+
+Injection by XML (Legacy)
+<bean id="paymentService"
+      class="com.example.PaymentService"/>
+
+<bean id="orderService"
+      class="com.example.OrderService">
+    <constructor-arg ref="paymentService"/>
+</bean>
+
+or
+
+<property name="paymentService"
+          ref="paymentService"/>
+
+Mostly used in older Spring applications.
+
+Summary
+Injection Type	Recommended	Best Use Case
+Constructor Injection	✅ Yes	Required dependencies (preferred default)
+Setter Injection	✅ Yes	Optional or configurable dependencies
+Field Injection	❌ No	Quick demos or legacy code
+Method Injection	⚠️ Occasionally	Initialization requiring injected parameters
+@Qualifier	✅ Yes	Selecting one bean among multiple candidates
+@Primary	✅ Yes	Defining a default implementation
+Collection Injection	✅ Yes	Using all beans of a given type
+@Lazy	✅ Situational	Deferred initialization or circular dependency mitigation
+Optional / ObjectProvider	✅ Situational	Optional or on-demand dependencies
+
+Best practice for modern Spring applications: Prefer constructor injection for mandatory dependencies, use setter injection for optional ones, avoid field injection, and use @Qualifier or @Primary when multiple implementations of the same interface exist.
