@@ -97,8 +97,7 @@ public class GeneralTest {
 
         txRunner.doInTransaction(em1 -> {
             DynamicCustomer e1 = em1.find(DynamicCustomer.class, id);
-            //the last commiter have won
-            assertEquals("FirstName", e1.getName());
+            assertEquals("FirstName", e1.getName()); //a value from first updater
             assertEquals("NEW@email", e1.getEmail()); //a value from second updater
         });
     }
