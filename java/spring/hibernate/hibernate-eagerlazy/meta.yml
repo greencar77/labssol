@@ -1,5 +1,7 @@
 completed: 2026-06-05
 labId: DL8HJG
+tags:
+  - spring_di_field
 hibernate:
   emMethods:
     - find
