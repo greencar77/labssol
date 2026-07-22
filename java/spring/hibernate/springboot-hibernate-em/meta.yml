@@ -2,6 +2,7 @@ completed: 2026-05-27
 labId: G14DCI
 tags:
   - http
+  - dynamic_caller
 hibernate:
   emMethods:
     - find
