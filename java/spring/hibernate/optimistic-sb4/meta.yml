@@ -3,3 +3,6 @@ labId: QEVCDB
 tags:
   - spring_di_field
   - hibernate_lock_optimistic
+hibernate:
+  emMethods:
+    - find
