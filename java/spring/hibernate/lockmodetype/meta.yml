@@ -1,0 +1,11 @@
+completed: 2026-07-22
+labId: VDB5DL
+tags:
+  - spring_di_field
+  - hibernate_lock_optimistic
+hibernate:
+  emMethods:
+    - find
+  LockModeType:
+    - OPTIMISTIC
+    - OPTIMISTIC_FORCE_INCREMENT

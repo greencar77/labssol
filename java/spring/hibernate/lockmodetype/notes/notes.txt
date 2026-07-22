@@ -1,0 +1,24 @@
+Answer to QC5A
+
+Hibernate:
+    select
+        c1_0.id,
+        c1_0.email,
+        c1_0.name
+    from
+        customer c1_0
+    where
+        c1_0.id=?
+
+org.hibernate.HibernateException: Entity 'com.example.demo.entity.Customer' has no version and may not be locked at level OPTIMISTIC
+
+	at org.hibernate.event.internal.DefaultPostLoadEventListener.onPostLoad(DefaultPostLoadEventListener.java:64)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138)
+	at org.hibernate.engine.internal.StatefulPersistenceContext.processLoadedEntityHolder(StatefulPersistenceContext.java:470)
+	at org.hibernate.engine.internal.StatefulPersistenceContext.postLoad(StatefulPersistenceContext.java:435)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesSourceProcessingStateStandardImpl.finishUp(JdbcValuesSourceProcessingStateStandardImpl.java:154)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:166)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:31)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:213)
+...
+	at com.example.demo.LockModeGeneralTest.testNoOtherModifier(LockModeGeneralTest.java:27)
