@@ -9,3 +9,4 @@ hibernate:
   LockModeType:
     - OPTIMISTIC
     - OPTIMISTIC_FORCE_INCREMENT
+    - NONE
