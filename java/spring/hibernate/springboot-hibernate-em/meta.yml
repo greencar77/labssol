@@ -1,5 +1,7 @@
 completed: 2026-05-27
 labId: G14DCI
+tags:
+  - http
 hibernate:
   emMethods:
     - find
