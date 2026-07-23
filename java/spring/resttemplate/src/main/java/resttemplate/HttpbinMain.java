@@ -5,16 +5,19 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import resttemplate.helper.DynamicCaller;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("unused")
 public class HttpbinMain {
+
     public static void main(String[] args) {
-        get();
+        DynamicCaller.executeDynamically(HttpbinMain.class);
     }
 
-    private static void get() {
+    private static void doGet() {
         RestTemplate restTemplate = new RestTemplate();
 
         String url = "https://httpbin.org/get";
@@ -25,7 +28,7 @@ public class HttpbinMain {
         System.out.println("Body: " + response.getBody());
     }
 
-    private static void post() {
+    private static void doPost() {
         RestTemplate restTemplate = new RestTemplate();
 
         String url = "https://httpbin.org/post";
