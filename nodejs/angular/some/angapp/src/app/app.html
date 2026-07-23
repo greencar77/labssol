@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Book List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Release Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (book of books; track book.title) {
+        <tr>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.releaseYear }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
