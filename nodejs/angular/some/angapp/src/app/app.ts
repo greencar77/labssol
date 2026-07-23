@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 
 interface Book {
   title: string;
@@ -9,10 +10,17 @@ interface Book {
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [ReactiveFormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
+  bookForm = new FormGroup({
+    title: new FormControl('', Validators.required),
+    author: new FormControl('', Validators.required),
+    releaseYear: new FormControl('', [Validators.required, Validators.min(0)])
+  });
+
   books: Book[] = [
     { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', releaseYear: 1925 },
     { title: 'To Kill a Mockingbird', author: 'Harper Lee', releaseYear: 1960 },
@@ -35,4 +43,16 @@ export class App {
     { title: 'Great Expectations', author: 'Charles Dickens', releaseYear: 1861 },
     { title: 'The Hitchhiker\'s Guide to the Galaxy', author: 'Douglas Adams', releaseYear: 1979 }
   ];
+
+  addBook() {
+    if (this.bookForm.valid) {
+      const newBook: Book = {
+        title: this.bookForm.value.title as string,
+        author: this.bookForm.value.author as string,
+        releaseYear: Number(this.bookForm.value.releaseYear)
+      };
+      this.books.push(newBook);
+      this.bookForm.reset();
+    }
+  }
 }
