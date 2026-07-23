@@ -17,4 +17,6 @@
 **/.gradle
 **/build
 
+**/.vscode
+
 
