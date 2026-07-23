@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DynamicCaller {
-    public static void executeDynamically(Class clazz) {
+    public static void executeDynamically(Class<?> clazz) {
         List<Method> callableMethods = Arrays.stream(clazz.getDeclaredMethods())
                 .filter(m -> Modifier.isStatic(m.getModifiers()))
                 .filter(m -> m.getName().startsWith("do"))
