@@ -1,0 +1,249 @@
+
+
+
+
+Claim offer
+
+How to fix this:
+export interface Product {
+  id: number;
+  prodGroup: string;
+  values: Map<string, any>,
+}
+
+export const DEFAULT_PRODUCTS: Product[] = [
+  {
+    id: 1,
+    prodGroup: 'default',
+    values: new Map([
+      ['name', 'Wireless Mouse'],
+      ['price', 29.99],
+      ['category', 'Electronics'],
+      ['available', true],
+      ]
+    ),
+
+Your code is valid TypeScript if you're only creating the Map. The problem is usually one of these:
+
+1. Missing closing brackets (your snippet is incomplete)
+Make sure you close the object and array:
+
+export interface Product {
+  id: number;
+  prodGroup: string;
+  values: Map<string, any>;
+}
+
+export const DEFAULT_PRODUCTS: Product[] = [
+  {
+    id: 1,
+    prodGroup: 'default',
+    values: new Map([
+      ['name', 'Wireless Mouse'],
+      ['price', 29.99],
+      ['category', 'Electronics'],
+      ['available', true],
+    ]),
+  },
+];
+2. If you're using Angular and displaying Map in a template
+Angular templates don't iterate over Map directly with *ngFor. You need the keyvalue pipe:
+
+<div *ngFor="let item of product.values | keyvalue">
+  {{ item.key }}: {{ item.value }}
+</div>
+3. If you're loading this from JSON
+Map is not JSON-serializable. If this data comes from an API or a JSON file, use a plain object instead:
+
+export interface Product {
+  id: number;
+  prodGroup: string;
+  values: Record<string, any>;
+}
+
+export const DEFAULT_PRODUCTS: Product[] = [
+  {
+    id: 1,
+    prodGroup: 'default',
+    values: {
+      name: 'Wireless Mouse',
+      price: 29.99,
+      category: 'Electronics',
+      available: true,
+    },
+  },
+];
+This is generally the preferred approach unless you specifically need Map features.
+
+4. Avoid any
+You can make it safer:
+
+values: Map<string, string | number | boolean>;
+or
+
+type ProductValue = string | number | boolean;
+
+values: Map<string, ProductValue>;
+Can you share the actual error message you're getting? (e.g., compiler error, Angular template error, or runtime error). That will pinpoint the exact issue.
+
+
+In TypeScript, a two-value tuple is written as [T1, T2].
+
+Array of string/string tuples
+const entries: [string, string][] = [
+  ['name', 'Wireless Mouse'],
+  ['category', 'Electronics'],
+];
+Array of string/number tuples
+const prices: [string, number][] = [
+  ['price', 29.99],
+  ['stock', 100],
+];
+Mixed value types
+type Value = string | number | boolean;
+
+const entries: [string, Value][] = [
+  ['name', 'Wireless Mouse'],
+  ['price', 29.99],
+  ['available', true],
+];
+Using with Map
+type Value = string | number | boolean;
+
+const entries: [string, Value][] = [
+  ['name', 'Wireless Mouse'],
+  ['price', 29.99],
+  ['available', true],
+];
+
+const map = new Map<string, Value>(entries);
+Alternatively, you can define a reusable tuple type:
+
+type Entry = [string, string | number | boolean];
+
+const entries: Entry[] = [
+  ['name', 'Wireless Mouse'],
+  ['price', 29.99],
+  ['available', true],
+];
+This is the most common pattern when the same tuple type is used in multiple places.
+
+
+printing
+> values: [ [Array], [Array], [Array], [Array] ]
+
+What you're seeing is Node.js/console's abbreviated output. It collapses nested arrays into [Array].
+
+For example:
+
+const values: [string, string | number | boolean][] = [
+  ['name', 'Wireless Mouse'],
+  ['price', 29.99],
+  ['category', 'Electronics'],
+  ['available', true],
+];
+
+console.log({ values });
+may print:
+
+{
+  values: [ [Array], [Array], [Array], [Array] ]
+}
+To see the full contents
+console.log(values);
+Output:
+
+[
+  [ 'name', 'Wireless Mouse' ],
+  [ 'price', 29.99 ],
+  [ 'category', 'Electronics' ],
+  [ 'available', true ]
+]
+Or stringify it:
+
+console.log(JSON.stringify(values, null, 2));
+Output:
+
+[
+  ["name", "Wireless Mouse"],
+  ["price", 29.99],
+  ["category", "Electronics"],
+  ["available", true]
+]
+If you're logging an object in Node.js, you can also use:
+
+import util from 'node:util';
+
+console.log(util.inspect({ values }, { depth: null }));
+or
+
+console.dir({ values }, { depth: null });
+If this is Angular/Chrome DevTools
+The browser console normally expands arrays automatically. If you're seeing [Array], it's most likely coming from Node.js (console.log/util.inspect) or a test runner like Jest.
+
+Can you tell me where you're printing it?
+
+Node.js
+
+Angular in Chrome DevTools
+
+Jest
+
+VS Code Debug Console
+
+Something else
+
+
+TS
+show the same with Record
+
+A Record is usually a better fit than Map when your keys are strings and you want JSON-friendly data.
+
+Define a Record
+type ProductValue = string | number | boolean;
+
+type ProductValues = Record<string, ProductValue>;
+Create a Record
+const values: ProductValues = {
+  name: 'Wireless Mouse',
+  price: 29.99,
+  category: 'Electronics',
+  available: true,
+};
+Use it in your interface
+interface Product {
+  id: number;
+  prodGroup: string;
+  values: Record<string, string | number | boolean>;
+}
+
+const DEFAULT_PRODUCTS: Product[] = [
+  {
+    id: 1,
+    prodGroup: 'default',
+    values: {
+      name: 'Wireless Mouse',
+      price: 29.99,
+      category: 'Electronics',
+      available: true,
+    },
+  },
+];
+Access values
+console.log(product.values.name);
+console.log(product.values['price']);
+Iterate
+for (const [key, value] of Object.entries(product.values)) {
+  console.log(key, value);
+}
+Output:
+
+name Wireless Mouse
+price 29.99
+category Electronics
+available true
+For most application data (especially if it's stored as JSON or sent over HTTP), Record<string, T> is generally simpler and more idiomatic than Map<string, T>. Use Map only if you specifically need features like non-string keys, guaranteed insertion-order APIs, or methods such as .set(), .get(), and .has().
+
+You’re now chatting with Mini. Responses may have lower quality until 1:27 PM.
+Try Plus free
+
