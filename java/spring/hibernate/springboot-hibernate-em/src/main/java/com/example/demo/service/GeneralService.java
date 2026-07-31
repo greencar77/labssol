@@ -1,7 +1,9 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.*;
-import com.example.demo.repository.*;
+import com.example.demo.entity.Customer;
+import com.example.demo.entity.Order;
+import com.example.demo.repository.CustomerRepository;
+import com.example.demo.repository.OrderRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
