@@ -3,3 +3,4 @@ labId: 42NJ8Y
 tags:
   - pymet_pandas_DataFrame_set_index
   - pymet_pandas_DataFrame_resample
+  - pymet_pandas_DataFrame_groupby
