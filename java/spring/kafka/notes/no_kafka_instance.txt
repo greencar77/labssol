@@ -1,0 +1,573 @@
+QBJX
+
+endlessly running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2026-08-14T12:59:34.349+03:00  INFO 17184 --- [kafka-demo] [           main] com.example.kafka.KafkaDemoApplication   : Starting KafkaDemoApplication using Java 25.0.3 with PID 17184 (C:\Users\zumo\viskas\myprojects\github\greencar77\labssol\java\spring\kafka\target\classes started by zumo in C:\Users\zumo\viskas\myprojects\github\greencar77\labssol\java\spring\kafka)
+2026-08-14T12:59:34.354+03:00  INFO 17184 --- [kafka-demo] [           main] com.example.kafka.KafkaDemoApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-08-14T12:59:35.558+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values:
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = kafka-demo-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2026-08-14T12:59:35.632+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2026-08-14T12:59:35.633+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2026-08-14T12:59:35.633+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1786701575630
+2026-08-14T12:59:35.658+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:35.662+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:35.767+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:35.768+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:35.870+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:35.870+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:36.173+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:36.174+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:36.678+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:36.678+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:37.584+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:37.585+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:38.592+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:38.593+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:39.499+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:39.499+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:40.504+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:40.505+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:41.510+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:41.511+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:42.518+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:42.518+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:43.525+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:43.526+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:44.433+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:44.433+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:45.338+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:45.339+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:46.347+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:46.348+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:47.355+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:47.355+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:48.261+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:48.263+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:49.270+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:49.271+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:50.179+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:50.179+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:51.088+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:51.089+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:52.098+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:52.098+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:53.106+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:53.106+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:54.112+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:54.113+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:55.118+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:55.119+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:56.133+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:56.134+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:57.146+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:57.146+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:58.054+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:58.055+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T12:59:59.060+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T12:59:59.061+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:00.066+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:00.066+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:01.072+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:01.073+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:01.978+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:01.979+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:02.985+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:02.985+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:03.990+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:03.990+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:04.998+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:04.998+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:05.637+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] o.a.k.c.a.i.AdminMetadataManager         : [AdminClient clientId=kafka-demo-admin-0] Metadata update failed
+
+org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: fetchMetadata
+
+2026-08-14T13:00:05.648+03:00 ERROR 17184 --- [kafka-demo] [           main] o.springframework.kafka.core.KafkaAdmin  : Could not configure topics
+
+org.springframework.kafka.KafkaException: Timed out waiting to get existing topics
+	at org.springframework.kafka.core.KafkaAdmin.lambda$checkPartitions$13(KafkaAdmin.java:539) ~[spring-kafka-3.2.0.jar:3.2.0]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1430) ~[na:na]
+	at org.springframework.kafka.core.KafkaAdmin.checkPartitions(KafkaAdmin.java:518) ~[spring-kafka-3.2.0.jar:3.2.0]
+	at org.springframework.kafka.core.KafkaAdmin.addOrModifyTopicsIfNeeded(KafkaAdmin.java:411) ~[spring-kafka-3.2.0.jar:3.2.0]
+	at org.springframework.kafka.core.KafkaAdmin.initialize(KafkaAdmin.java:263) ~[spring-kafka-3.2.0.jar:3.2.0]
+	at org.springframework.kafka.core.KafkaAdmin.afterSingletonsInstantiated(KafkaAdmin.java:227) ~[spring-kafka-3.2.0.jar:3.2.0]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:986) ~[spring-beans-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.8.jar:6.1.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.0.jar:3.3.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.0.jar:3.3.0]
+	at com.example.kafka.KafkaDemoApplication.main(KafkaDemoApplication.java:10) ~[classes/:na]
+Caused by: java.util.concurrent.TimeoutException: null
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1981) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2116) ~[na:na]
+	at org.apache.kafka.common.internals.KafkaFutureImpl.get(KafkaFutureImpl.java:180) ~[kafka-clients-3.7.0.jar:na]
+	at org.springframework.kafka.core.KafkaAdmin.lambda$checkPartitions$13(KafkaAdmin.java:521) ~[spring-kafka-3.2.0.jar:3.2.0]
+	... 14 common frames omitted
+
+2026-08-14T13:00:05.973+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:05.973+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:06.836+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:06.836+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:07.728+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:07.728+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:08.838+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:08.838+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:09.880+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:09.880+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:10.961+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:10.962+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:12.028+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:12.029+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:12.992+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:12.992+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:14.075+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:14.075+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:14.928+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Node -1 disconnected.
+2026-08-14T13:00:14.928+03:00  WARN 17184 --- [kafka-demo] [ka-demo-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=kafka-demo-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:15.659+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] o.a.k.clients.admin.KafkaAdminClient     : [AdminClient clientId=kafka-demo-admin-0] Forcing a hard I/O thread shutdown. Requests in progress will be aborted.
+2026-08-14T13:00:15.659+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for kafka-demo-admin-0 unregistered
+2026-08-14T13:00:15.660+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] o.a.k.c.a.i.AdminMetadataManager         : [AdminClient clientId=kafka-demo-admin-0] Metadata update failed
+
+org.apache.kafka.common.errors.TimeoutException: The AdminClient thread has exited. Call: fetchMetadata
+
+2026-08-14T13:00:15.660+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] o.a.k.clients.admin.KafkaAdminClient     : [AdminClient clientId=kafka-demo-admin-0] Timed out 2 remaining operation(s) during close.
+2026-08-14T13:00:15.662+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-08-14T13:00:15.662+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-08-14T13:00:15.662+03:00  INFO 17184 --- [kafka-demo] [ka-demo-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-08-14T13:00:15.694+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values:
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-demo-group-1
+	client.rack =
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = demo-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2026-08-14T13:00:15.728+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-08-14T13:00:15.791+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2026-08-14T13:00:15.791+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2026-08-14T13:00:15.791+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1786701615791
+2026-08-14T13:00:15.794+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Subscribed to topic(s): demo-topic
+2026-08-14T13:00:15.800+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values:
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-demo-group2-2
+	client.rack =
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = demo-group2
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2026-08-14T13:00:15.801+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-08-14T13:00:15.814+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2026-08-14T13:00:15.815+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2026-08-14T13:00:15.815+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1786701615814
+2026-08-14T13:00:15.815+03:00  INFO 17184 --- [kafka-demo] [           main] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Subscribed to topic(s): demo-topic
+2026-08-14T13:00:15.824+03:00  INFO 17184 --- [kafka-demo] [           main] com.example.kafka.KafkaDemoApplication   : Started KafkaDemoApplication in 42.438 seconds (process running for 43.675)
+2026-08-14T13:00:15.830+03:00  INFO 17184 --- [kafka-demo] [   scheduling-1] c.e.kafka.producer.KafkaProducerService  : Producing message: Message generated at 1786701615828 with UUID: 2b209548-8973-452a-93bb-d14f1cc0d196
+2026-08-14T13:00:15.840+03:00  INFO 17184 --- [kafka-demo] [   scheduling-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values:
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = kafka-demo-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2026-08-14T13:00:15.841+03:00  INFO 17184 --- [kafka-demo] [   scheduling-1] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-08-14T13:00:15.849+03:00  INFO 17184 --- [kafka-demo] [   scheduling-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=kafka-demo-producer-1] Instantiated an idempotent producer.
+2026-08-14T13:00:15.869+03:00  INFO 17184 --- [kafka-demo] [   scheduling-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2026-08-14T13:00:15.869+03:00  INFO 17184 --- [kafka-demo] [   scheduling-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2026-08-14T13:00:15.869+03:00  INFO 17184 --- [kafka-demo] [   scheduling-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1786701615869
+2026-08-14T13:00:16.042+03:00  INFO 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Node -1 disconnected.
+2026-08-14T13:00:16.042+03:00  WARN 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.042+03:00  WARN 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:16.042+03:00  INFO 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Node -1 disconnected.
+2026-08-14T13:00:16.042+03:00  INFO 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Node -1 disconnected.
+2026-08-14T13:00:16.042+03:00  WARN 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.042+03:00  WARN 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.042+03:00  WARN 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:16.042+03:00  WARN 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:16.160+03:00  INFO 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Node -1 disconnected.
+2026-08-14T13:00:16.160+03:00  INFO 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Node -1 disconnected.
+2026-08-14T13:00:16.160+03:00  WARN 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.160+03:00  WARN 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.160+03:00  WARN 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:16.160+03:00  WARN 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:16.175+03:00  INFO 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Node -1 disconnected.
+2026-08-14T13:00:16.176+03:00  WARN 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.176+03:00  WARN 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:16.274+03:00  INFO 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Node -1 disconnected.
+2026-08-14T13:00:16.274+03:00  INFO 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Node -1 disconnected.
+2026-08-14T13:00:16.274+03:00  WARN 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.274+03:00  WARN 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.274+03:00  WARN 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:16.274+03:00  WARN 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:16.291+03:00  INFO 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Node -1 disconnected.
+2026-08-14T13:00:16.291+03:00  WARN 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.291+03:00  WARN 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:16.456+03:00  INFO 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Node -1 disconnected.
+2026-08-14T13:00:16.458+03:00  WARN 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.458+03:00  WARN 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:16.490+03:00  INFO 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Node -1 disconnected.
+2026-08-14T13:00:16.490+03:00  WARN 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.490+03:00  WARN 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:16.506+03:00  INFO 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Node -1 disconnected.
+2026-08-14T13:00:16.507+03:00  WARN 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.507+03:00  WARN 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:16.791+03:00  INFO 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Node -1 disconnected.
+2026-08-14T13:00:16.791+03:00  WARN 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.791+03:00  WARN 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:16.873+03:00  INFO 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Node -1 disconnected.
+2026-08-14T13:00:16.873+03:00  WARN 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.873+03:00  WARN 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:16.889+03:00  INFO 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Node -1 disconnected.
+2026-08-14T13:00:16.889+03:00  WARN 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:16.889+03:00  WARN 17184 --- [kafka-demo] [demo-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=kafka-demo-producer-1] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:17.495+03:00  INFO 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Node -1 disconnected.
+2026-08-14T13:00:17.495+03:00  WARN 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-08-14T13:00:17.495+03:00  WARN 17184 --- [kafka-demo] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group-1, groupId=demo-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-08-14T13:00:17.656+03:00  INFO 17184 --- [kafka-demo] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-demo-group2-2, groupId=demo-group2] Node -1 disconnected.
