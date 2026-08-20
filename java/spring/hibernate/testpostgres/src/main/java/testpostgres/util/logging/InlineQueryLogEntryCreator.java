@@ -4,7 +4,11 @@ import net.ttddyy.dsproxy.ExecutionInfo;
 import net.ttddyy.dsproxy.QueryInfo;
 import net.ttddyy.dsproxy.listener.logging.DefaultQueryLogEntryCreator;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class InlineQueryLogEntryCreator extends DefaultQueryLogEntryCreator {
 
