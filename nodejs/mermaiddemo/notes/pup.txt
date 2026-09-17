@@ -1,0 +1,44 @@
+$ mmdc -i diagram.mmd -o diagram.png
+Generating single mermaid chart
+
+Error: Could not find chrome-headless-shell (ver. 153.0.8010.36). This can occur if either
+ 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome-headless-shell`) or
+ 2. your cache path is incorrectly configured (which is: C:\Users\USER\.cache\puppeteer).
+For (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.
+    at ChromeLauncher.resolveExecutablePath (file:///C:/Users/USER/AppData/Local/pnpm/store/v11/links/@/puppeteer-core/25.11.0/82f257bd46e0916a49de4916a458db26a25f38eb10e210a9db438a6307862a0f/node_modules/puppeteer-core/lib/puppeteer/node/BrowserLauncher.js:365:19)
+    at async ChromeLauncher.computeLaunchArguments (file:///C:/Users/USER/AppData/Local/pnpm/store/v11/links/@/puppeteer-core/25.11.0/82f257bd46e0916a49de4916a458db26a25f38eb10e210a9db438a6307862a0f/node_modules/puppeteer-core/lib/puppeteer/node/ChromeLauncher.js:92:19)
+    at async ChromeLauncher.launch (file:///C:/Users/USER/AppData/Local/pnpm/store/v11/links/@/puppeteer-core/25.11.0/82f257bd46e0916a49de4916a458db26a25f38eb10e210a9db438a6307862a0f/node_modules/puppeteer-core/lib/puppeteer/node/BrowserLauncher.js:95:28)
+    at async ChromeLauncher.launch (file:///C:/Users/USER/AppData/Local/pnpm/store/v11/links/@/puppeteer-core/25.11.0/82f257bd46e0916a49de4916a458db26a25f38eb10e210a9db438a6307862a0f/node_modules/puppeteer-core/lib/puppeteer/node/ChromeLauncher.js:39:16)
+    at async PuppeteerNode.launch (file:///C:/Users/USER/AppData/Local/pnpm/store/v11/links/@/puppeteer-core/25.11.0/82f257bd46e0916a49de4916a458db26a25f38eb10e210a9db438a6307862a0f/node_modules/puppeteer-core/lib/puppeteer/node/PuppeteerNode.js:124:16)
+    at async run (file:///C:/Users/USER/AppData/Local/pnpm/store/v11/links/@mermaid-js/mermaid-cli/11.17.0/32fd7d4d60ffc99775f69be65f2642028423ebeb0a421024d3a7d3fa0cefa1d8/node_modules/@mermaid-js/mermaid-cli/src/index.js:862:19)
+    at async cli (file:///C:/Users/USER/AppData/Local/pnpm/store/v11/links/@mermaid-js/mermaid-cli/11.17.0/32fd7d4d60ffc99775f69be65f2642028423ebeb0a421024d3a7d3fa0cefa1d8/node_modules/@mermaid-js/mermaid-cli/src/index.js:374:3)
+
+
+
+
+
+$ pnpm exec puppeteer browsers install chrome-headless-shell
+Already up to date
+Done in 1.4s using pnpm v11.17.0
+'puppeteer' is not recognized as an internal or external command,
+operable program or batch file.
+[ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL] Command "puppeteer" not found
+
+
+
+
+
+
+
+
+
+
+
+
+
+$ pnpm dlx puppeteer browsers install chrome-headless-shell
+Packages: +26
+++++++++++++++++++++++++++
+Progress: resolved 26, reused 26, downloaded 0, added 1, done
+AppData/Local/pnpm/store/v11/links/@/puppeteer/25.11.0/b1db521adfb3334735f678dab81a6bb1e835a1cc0fe9ffb4f112e68d81afb052/node_modules/puppeteer: Running postinstall script, done in 33.3s
+chrome-headless-shell@153.0.8010.36 C:\Users\USER\.cache\puppeteer\chrome-headless-shell\win64-153.0.8010.36\chrome-headless-shell-win64\chrome-headless-shell.exe

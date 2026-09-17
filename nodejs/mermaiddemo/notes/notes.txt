@@ -1,0 +1,14 @@
+pnpm add -g @mermaid-js/mermaid-cli
+pnpm exec puppeteer browsers install chrome-headless-shell
+
+pnpm dlx puppeteer browsers install chrome-headless-shell
+
+mmdc -i diagram.mmd -o diagram.png
+
+
+
+
+
+where mmdc
+where puppeteer
+pnpm list -g
