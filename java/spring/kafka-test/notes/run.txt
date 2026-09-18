@@ -1,0 +1,4 @@
+add in Configuration (where "-ea" lies)
+-DargLine="-Dnet.bytebuddy.experimental=true"
+
+some problem with java 25
