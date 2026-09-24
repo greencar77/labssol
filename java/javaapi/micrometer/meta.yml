@@ -2,3 +2,6 @@ completed: 2026-09-22
 labId: 1LHPXE
 tags:
   - javaapi_micrometer
+  - mvndep_org.springframework:spring-aop
+  - mvndep_io.micrometer:micrometer-core
+  - mvndep_org.aspectj:aspectjweaver
