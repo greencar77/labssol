@@ -1,0 +1,36 @@
+tasks.register('info') {
+    println "starting"
+}
+
+//alternative in older versions:
+//task tarTxtFiles(type: Tar) {
+tasks.register('tarTxtFiles', Tar) {
+    dependsOn info
+
+    archiveFileName = 'txt-files.tar'
+    destinationDirectory = layout.buildDirectory.dir('distributions')
+
+    compression = Compression.GZIP
+
+    from('input') {
+        include '**/*.txt'
+
+        eachFile { file ->
+            file.path = 'texts/' + file.name.replace('.txt', '.text')
+        }
+    }
+}
+
+tasks.register('tarTxtFilesShorter', Tar) {
+    from 'input'
+    include '**/*.txt'
+    into 'text'
+    rename '(.+).txt', '$1.text'
+    destinationDirectory = layout.buildDirectory.dir('distributions')
+    archiveFileName = 'txt-files.tgz'
+    compression = Compression.GZIP
+
+    doFirst {
+        println 'Creating TAR file'
+    }
+}
