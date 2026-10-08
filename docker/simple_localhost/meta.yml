@@ -1,8 +1,11 @@
 completed: 2026-07-20
 labId: TS396J
 docker:
+  image:
+    - nginx
   cmd:
     - image
+    - image_inspect
     - pull
     - run
     - stop

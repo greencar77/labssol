@@ -26,7 +26,8 @@ What's next:
 
 go to tmp folder and then run
 
-  
+QGLD
+
 $ docker run --rm -d   --name html-demo   -p 8080:80   -v "$PWD":/usr/share/nginx/html:ro   nginx:alpine
 d3595b7881fec1fc401430bd82b4cc9836f3d7e5332e58ccf24f0858d2a4797b
 
