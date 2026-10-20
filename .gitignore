@@ -17,6 +17,7 @@
 **/.gradle
 **/build
 
+#VS Code
 **/.vscode
 
 # Node
@@ -24,4 +25,8 @@
 **/dist
 npm-debug.log
 yarn-error.log
+
+#OpenAI
+**/*.env
+
 
