@@ -4,10 +4,5 @@ docker:
   image:
     - nginx
   cmd:
-    - image
     - image_inspect
-    - pull
-    - run
-    - stop
-    - ps
-    - history
+    - container_stop
