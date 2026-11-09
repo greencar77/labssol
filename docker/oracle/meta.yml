@@ -10,4 +10,5 @@ docker:
     - container_exec
     - container_ps
     - container_stop
+    - container_logs
 
