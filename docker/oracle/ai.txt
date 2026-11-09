@@ -1,0 +1,27 @@
+Use gvenzl/oracle-free:23-slim-faststart for a lightweight Oracle Free database:
+docker pull gvenzl/oracle-free:23-slim-faststart
+docker run -d --name oracle-free -p 1521:1521 `
+  -e ORACLE_PASSWORD=Oracle123 `
+  gvenzl/oracle-free:23-slim-faststart
+The image gives you a database, but not a populated sample schema by default. To practice with sample data, install Oracle’s sample schemas (such as HR) into it first.
+Run the recommended Data Pump commands, expdp and impdp, inside the database container. For example, after HR is installed:
+docker exec -it oracle-free expdp system/Oracle123@FREEPDB1 schemas=HR directory=DATA_PUMP_DIR dumpfile=hr.dmp logfile=hr_export.log
+docker exec -it oracle-free impdp system/Oracle123@FREEPDB1 schemas=HR directory=DATA_PUMP_DIR dumpfile=hr.dmp logfile=hr_import.log
+exp and imp are the older utilities; prefer expdp and impdp for new practice. Dump files must be accessible in the container through the Oracle DATA_PUMP_DIR directory.
+
+----------------
+Or use Bash line continuations with backslashes:
+docker run -d --name oracle-free -p 1521:1521 \
+  -e ORACLE_PASSWORD=Oracle123 \
+  gvenzl/oracle-free:23-slim-faststart
+
+-----
+
+ORA-12514 means the listener isn’t advertising FREEPDB1 yet. The database may still be starting. Check its startup logs and wait for the “ready to use” message:
+docker logs -f oracle-free
+Then check which services the listener knows about:
+docker exec -it oracle-free lsnrctl status
+If FREEPDB1 is listed, retry with an explicit connection string:
+docker exec -it oracle-free impdp 'system/Oracle123@//localhost:1521/FREEPDB1' schemas=HR directory=DATA_PUMP_DIR dumpfile=hr.dmp logfile=hr_import.log
+If it still fails, use the service name shown by lsnrctl status. Also, hr.dmp must already exist in Oracle’s DATA_PUMP_DIR; impdp won’t create the sample schema or dump file.
+

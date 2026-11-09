@@ -1,0 +1,13 @@
+completed: 2026-11-09
+labId: 15OZUP
+docker:
+  image:
+    - gvenzl/oracle-free
+  cmd:
+    - container_run
+    - container_ls
+    - container_start
+    - container_exec
+    - container_ps
+    - container_stop
+

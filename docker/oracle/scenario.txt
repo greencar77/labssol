@@ -1,0 +1,7 @@
+$ docker run -d -p 1521:1521 -e ORACLE_PASSWORD=nnn gvenzl/oracle-free:23-slim-faststart
+
+$ docker exec <container id> createAppUser user1 pwd1
+
+$ docker exec -it <container id> bash
+
+$ sqlplus user1/pwd1@//localhost:1521/FREEPDB1
