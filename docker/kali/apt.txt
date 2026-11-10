@@ -1,0 +1,655 @@
+apt update && apt -y install kali-linux-default
+
+
+└─# apt update && apt -y install kali-linux-default
+Get:1 http://kali.download/kali kali-rolling InRelease [34.0 kB]
+Get:2 http://kali.download/kali kali-rolling/non-free amd64 Packages [170 kB]
+Get:3 http://kali.download/kali kali-rolling/main amd64 Packages [21.9 MB]
+Get:4 http://kali.download/kali kali-rolling/contrib amd64 Packages [106 kB]
+Get:5 http://kali.download/kali kali-rolling/non-free-firmware amd64 Packages [17.2 kB]
+Fetched 22.2 MB in 3s (7072 kB/s)
+5 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Upgrading:
+  gcc-16-base  libgcc-s1  libstdc++6
+
+Installing:
+  kali-linux-default
+
+Installing dependencies:
+  3cpio                                 libgif7                         liburing2                               python3-mergedeep
+  7zip                                  libgirepository-2.0-0           liburiparser1                           python3-minidump
+  acl                                   libgl-dev                       libusb-1.0-0                            python3-minikerberos
+  adduser                               libgl1                          libusbmuxd-2.0-7                        python3-minimal
+  adwaita-icon-theme                    libgl1-mesa-dri                 libutempter0                            python3-mistune
+  aircrack-ng                           libgles2                        libutf8proc3                            python3-mitmproxy-linux
+  alsa-topology-conf                    libglib2.0-0t64                 libuuid-perl                            python3-mitmproxy-rs
+  alsa-ucm-conf                         libglib2.0-data                 libuv1-dev                              python3-mnemonic
+  amass                                 libglibmm-2.4-1t64              libuv1t64                               python3-more-itertools
+  apache2                               libglu1-mesa                    libv4l-0t64                             python3-mpmath
+  apache2-bin                           libglu1-mesa-dev                libv4lconvert0t64                       python3-msgpack
+  apache2-data                          libglut-dev                     libva-drm2                              python3-msldap
+  apache2-utils                         libglut3.12                     libva-x11-2                             python3-multidict
+  apt-file                              libglvnd0                       libva2                                  python3-munkres
+  arj                                   libglx-dev                      libvdpau1                               python3-mysqldb
+  arp-scan                              libglx-mesa0                    libvhdi1                                python3-nacl
+  arping                                libglx0                         libvmdk1                                python3-nassl
+  aspell                                libglycin-2-0                   libvorbis0a                             python3-neo4j
+  aspell-en                             libgme0                         libvorbisenc2                           python3-neobolt
+  aspnetcore-runtime-6.0                libgmp-dev                      libvorbisfile3                          python3-neotime
+  aspnetcore-targeting-pack-6.0         libgmpxx4ldbl                   libvpl2                                 python3-netaddr
+  at-spi2-common                        libgnutls-dane0t64              libvpx12                                python3-netifaces
+  at-spi2-core                          libgnutls30t64                  libvslvm1t64                            python3-networkx
+  atftpd                                libgomp1                        libvte-2.91-0                           python3-newt
+  autopsy                               libgpg-error-l10n               libvte-2.91-common                      python3-nltk
+  avahi-daemon                          libgpg-error0                   libvulkan1                              python3-nplusone
+  avahi-utils                           libgpgme45                      libwacom-common                         python3-ntp
+  axel                                  libgpgmepp7                     libwacom9                               python3-numba
+  base58                                libgphoto2-6t64                 libwayland-client0                      python3-numexpr
+  bash-completion                       libgphoto2-l10n                 libwayland-cursor0                      python3-numpy
+  bc                                    libgphoto2-port12t64            libwayland-egl1                         python3-numpy-dev
+  bind9-dnsutils                        libgpm2                         libwayland-server0                      python3-obfuscator
+  bind9-host                            libgprofng0                     libwbclient0                            python3-odf
+  bind9-libs                            libgraphite2-3                  libwebp7                                python3-olefile
+  binutils                              libgs-common                    libwebpdemux2                           python3-opengl
+  binutils-common                       libgs10                         libwebpmux3                             python3-openpyxl
+  binutils-mingw-w64-base               libgs10-common                  libwebrtc-audio-processing-1-3          python3-openssl
+  binutils-mingw-w64-i686               libgsm1                         libwebsockets19t64                      python3-opentelemetry-api
+  binutils-mingw-w64-x86-64             libgspell-1-3                   libwhisker2-perl                        python3-ordered-set
+  binutils-x86-64-linux-gnu             libgspell-1-common              libwinpr3-3                             python3-oscrypto
+  binwalk                               libgssapi-krb5-2                libwireshark-data                       python3-outcome
+  binwalk3                              libgssrpc4t64                   libwireshark19                          python3-packaging
+  bloodhound.py                         libgtk-3-0t64                   libwiretap16                            python3-paho-mqtt
+  bluez                                 libgtk-3-bin                    libwmflite-0.2-7                        python3-pandas
+  bsdextrautils                         libgtk-3-common                 libwoff1                                python3-pandas-lib
+  bubblewrap                            libgtkmm-3.0-1t64               libwrap0                                python3-paramiko
+  build-essential                       libgtksourceview-4-0            libwsutil17                             python3-parso
+  bulk-extractor                        libgtksourceview-4-common       libwtmpdb0                              python3-passlib
+  bully                                 libgts-0.7-5t64                 libwww-mechanize-perl                   python3-paste
+  bundler                               libgts-bin                      libwww-perl                             python3-pastedeploy
+  burpsuite                             libgudev-1.0-0                  libwww-robotrules-perl                  python3-pastedeploy-tpl
+  busybox                               libgumbo4                       libx11-6                                python3-pastescript
+  bzip2                                 libgusb2a                       libx11-data                             python3-pathspec
+  ca-certificates                       libguytools2t64                 libx11-dev                              python3-pcapy
+  ca-certificates-java                  libgvc7                         libx11-protocol-perl                    python3-pefile
+  cadaver                               libgvm23                        libx11-xcb1                             python3-pexpect
+  certipy-ad                            libgvplugin-gd8                 libx264-165                             python3-pgspecial
+  cewl                                  libgvplugin-neato-layout8       libx265-216                             python3-phonenumbers
+  cgpt                                  libgvplugin-pango8              libx86-1                                python3-pil
+  cherrytree                            libgvpr2                        libxar1                                 python3-pil.imagetk
+  chntpw                                libhandy-1-0                    libxau-dev                              python3-pip
+  chromium                              libharfbuzz-gobject0            libxau6                                 python3-pip-whl
+  chromium-common                       libharfbuzz-subset0             libxaw7                                 python3-plaster
+  chromium-driver                       libharfbuzz0b                   libxcb-cursor0                          python3-plaster-pastedeploy
+  cifs-utils                            libhashkit2t64                  libxcb-damage0                          python3-platformdirs
+  clang                                 libhdf4-11                      libxcb-dri3-0                           python3-playwright
+  clang-21                              libhdf5-320                     libxcb-glx0                             python3-pluggy
+  clang-tools-21                        libhdf5-hl-320                  libxcb-icccm4                           python3-ply
+  colord                                libheif-plugin-aomenc           libxcb-image0                           python3-png
+  colord-data                           libheif-plugin-dav1d            libxcb-keysyms1                         python3-poetry-core
+  comerr-dev                            libheif-plugin-libde265         libxcb-present0                         python3-poetry-dynamic-versioning
+  command-not-found                     libheif-plugin-x265             libxcb-randr0                           python3-pooch
+  commix                                libheif1                        libxcb-render-util0                     python3-portend
+  console-setup                         libhiredis1.1.0                 libxcb-render0                          python3-pptx
+  console-setup-linux                   libhtml-form-perl               libxcb-shape0                           python3-prettytable
+  coreboot-utils                        libhtml-format-perl             libxcb-shm0                             python3-prompt-toolkit
+  cpp                                   libhtml-parser-perl             libxcb-sync1                            python3-propcache
+  cpp-16                                libhtml-tagset-perl             libxcb-util1                            python3-psutil
+  cpp-16-x86-64-linux-gnu               libhtml-template-perl           libxcb-xfixes0                          python3-psycogreen
+  cpp-x86-64-linux-gnu                  libhtml-tree-perl               libxcb-xinerama0                        python3-psycopg
+  cramfsswap                            libhttp-cookies-perl            libxcb-xinput0                          python3-psycopg-c
+  creddump7                             libhttp-daemon-perl             libxcb-xkb1                             python3-psycopg2
+  crunch                                libhttp-date-perl               libxcb-xv0                              python3-ptyprocess
+  cryptcat                              libhttp-dav-perl                libxcb1                                 python3-publicsuffix2
+  cryptsetup                            libhttp-message-perl            libxcb1-dev                             python3-publicsuffixlist
+  cryptsetup-bin                        libhttp-negotiate-perl          libxcomposite1                          python3-pure-eval
+  cryptsetup-initramfs                  libhunspell-1.7-0               libxcursor1                             python3-py-sneakers
+  cryptsetup-nuke-password              libhwasan0                      libxdamage1                             python3-pyasn1
+  cups                                  libhwloc-plugins                libxdmcp-dev                            python3-pyasn1-modules
+  cups-browsed                          libhwloc15                      libxdmcp6                               python3-pyasyncore
+  cups-client                           libhwy1t64                      libxdot4                                python3-pycares
+  cups-common                           libi2c0                         libxerces-c3.2t64                       python3-pycparser
+  cups-core-drivers                     libibus-1.0-5                   libxext-dev                             python3-pycryptodome
+  cups-daemon                           libical3t64                     libxext6                                python3-pycurl
+  cups-filters                          libice-dev                      libxfixes3                              python3-pydantic
+  cups-filters-core-drivers             libice6                         libxfont2                               python3-pydantic-core
+  cups-ipp-utils                        libicu72                        libxft2                                 python3-pydantic-settings
+  cups-pk-helper                        libicu78                        libxi6                                  python3-pydispatch
+  cups-ppdc                             libidn12                        libxinerama1                            python3-pydot
+  cups-server-common                    libidn2-0                       libxkbcommon-x11-0                      python3-pydyf
+  curl                                  libieee1284-3t64                libxkbcommon0                           python3-pyee
+  cutycapt                              libijs-0.35                     libxkbfile1                             python3-pyexploitdb
+  davtest                               libimage-exiftool-perl          libxm4                                  python3-pyfiglet
+  dbd                                   libimagequant0                  libxml++2.6-2v5                         python3-pygame
+  dbus                                  libimath-3-2-30                 libxml-dom-perl                         python3-pygments
+  dbus-bin                              libimobiledevice-1.0-6          libxml-libxml-perl                      python3-pygraphviz
+  dbus-daemon                           libimobiledevice-glue-1.0-0     libxml-namespacesupport-perl            python3-pyinotify
+  dbus-session-bus-common               libinih1                        libxml-parser-perl                      python3-pyinstaller
+  dbus-system-bus-common                libiniparser4                   libxml-perl                             python3-pylnk3
+  dbus-user-session                     libinireader0                   libxml-regexp-perl                      python3-pylsqpack
+  dconf-gsettings-backend               libinput-bin                    libxml-sax-base-perl                    python3-pymssql
+  dconf-service                         libinput10                      libxml-sax-expat-perl                   python3-pymysql
+  dcraw                                 libio-compress-brotli-perl      libxml-sax-perl                         python3-pynfsclient
+  debugedit                             libio-html-perl                 libxml-twig-perl                        python3-pyotp
+  default-jre                           libio-multiplex-perl            libxml-writer-perl                      python3-pyparsing
+  default-jre-headless                  libio-socket-inet6-perl         libxml-xpathengine-perl                 python3-pypdf
+  default-mysql-server                  libio-socket-ssl-perl           libxml2-16                              python3-pyperclip
+  desktop-file-utils                    libio-stringy-perl              libxml2-dev                             python3-pyphen
+  dhcpcd-base                           libip4tc2                       libxml2-utils                           python3-pypsrp
+  dictionaries-common                   libip6tc2                       libxmp4                                 python3-pypykatz
+  dirb                                  libipc-shareable-perl           libxmu6                                 python3-pyqrcode
+  dirbuster                             libipc-system-simple-perl       libxmuu1                                python3-pyqt5
+  dirmngr                               libisl23                        libxnnpack0.20241108                    python3-pyqt5.qtopengl
+  distro-info-data                      libitm1                         libxnvctrl0                             python3-pyqt5.sip
+  dmidecode                             libjack-jackd2-0                libxpm4                                 python3-pyqt6
+  dmitry                                libjansson4                     libxrandr2                              python3-pyqt6.sip
+  dmsetup                               libjaylink0                     libxrender1                             python3-pyqtgraph
+  dns2tcp                               libjbig0                        libxres1                                python3-pyramid
+  dnschef                               libjbig2dec0                    libxshmfence1                           python3-pyshodan
+  dnsenum                               libjcode-pm-perl                libxslt1.1                              python3-pysnmp
+  dnsmap                                libjemalloc2                    libxss1                                 python3-pyspnego
+  dnsrecon                              libjim0.84                      libxt-dev                               python3-pytest
+  doc-base                              libjpeg-turbo-progs             libxt6t64                               python3-python-multipart
+  dos2unix                              libjpeg62-turbo                 libxtables12                            python3-python-socks
+  dotnet-apphost-pack-6.0               libjq1                          libxtst6                                python3-pytz
+  dotnet-host                           libjs-bootstrap5                libxv1                                  python3-pyvirtualdisplay
+  dotnet-hostfxr-6.0                    libjs-d3                        libxvidcore4                            python3-pyvnc
+  dotnet-runtime-6.0                    libjs-jquery                    libxxf86dga1                            python3-pywerview
+  dotnet-runtime-deps-6.0               libjs-lunr                      libxxf86vm1                             python3-pyyaml-env-tag
+  dotnet-sdk-6.0                        libjs-skeleton                  libxxhash-dev                           python3-pyzipper
+  dotnet-targeting-pack-6.0             libjs-sphinxdoc                 libyaml-0-2                             python3-qasync
+  dpkg-dev                              libjson-c5                      libyaml-tiny-perl                       python3-qrcode
+  dracut-install                        libjson-glib-1.0-0              libyara10                               python3-rapidfuzz
+  dsniff                                libjson-glib-1.0-common         libyuv0                                 python3-redis
+  dvisvgm                               libjson-perl                    libz3-4                                 python3-referencing
+  e2fsprogs                             libjson-xs-perl                 libz3-dev                               python3-regex
+  e2fsprogs-l10n                        libjsoncpp26                    libze1                                  python3-repoze.lru
+  easy-rsa                              libjudydebian1                  libzfp1t64                              python3-requests
+  emacsen-common                        libjxl0.11                      libzip-dev                              python3-requests-file
+  enchant                               libjxr-tools                    libzip5                                 python3-retrying
+  enum4linux                            libjxr0t64                      libzix-0-0                              python3-rfc3339-validator
+  ethtool                               libk5crypto3                    libzmq5                                 python3-rfc3986-validator
+  ettercap-common                       libkadm5clnt-mit12              libzopfli1                              python3-rfc3987
+  ettercap-graphical                    libkadm5srv-mit12               libzvbi-common                          python3-rich
+  evil-winrm                            libkdb5-10t64                   libzvbi0t64                             python3-rich-argparse
+  exe2hexbat                            libkeyutils1                    libzzip-0-13t64                         python3-routes
+  exiv2                                 libklibc                        links                                   python3-rpds-py
+  expect                                libkmod2                        linux-base                              python3-rq
+  exploitdb                             libkpathsea6                    linux-libc-dev                          python3-ruamel.yaml
+  eyewitness                            libkrb5-3                       linux-sysctl-defaults                   python3-ruamel.yaml.clib
+  fakeroot                              libkrb5-dev                     llvm-21                                 python3-samba
+  faraday                               libkrb5support0                 llvm-21-dev                             python3-scapy
+  faraday-agent-dispatcher              libksba8                        llvm-21-linker-tools                    python3-scipy
+  faraday-cli                           liblapack3                      llvm-21-runtime                         python3-secretsocks
+  fern-wifi-cracker                     liblcms2-2                      llvm-21-tools                           python3-secure
+  feroxbuster                           libldap-common                  llvm-spirv-21                           python3-selenium
+  ffuf                                  libldap2                        lmodern                                 python3-serial
+  fierce                                libldb2                         locales                                 python3-serial-asyncio
+  figlet                                libleptonica6                   logrotate                               python3-service-identity
+  file                                  liblerc4                        logsave                                 python3-setuptools
+  finger                                liblilv-0-0                     lrzsz                                   python3-setuptools-whl
+  firebird4.0-common                    liblinear4                      lsb-release                             python3-sgmllib3k
+  firebird4.0-common-doc                libllvm21                       lsof                                    python3-sh
+  firefox-esr                           libllvmspirvlib21.1             luit                                    python3-shodan
+  flac                                  liblmdb0                        lynx                                    python3-shtab
+  flashrom                              liblocale-gettext-perl          lynx-common                             python3-simple-rest-client
+  flex                                  liblouis-data                   m4                                      python3-simple-websocket
+  fontconfig                            liblouis20                      macchanger                              python3-simplejson
+  fontconfig-config                     liblouisutdml-bin               magicrescue                             python3-simplekv
+  fonts-dejavu-core                     liblouisutdml-data              mailcap                                 python3-six
+  fonts-dejavu-extra                    liblouisutdml9t64               make                                    python3-skia-pathops
+  fonts-dejavu-mono                     liblqr-1-0                      man-db                                  python3-slowapi
+  fonts-droid-fallback                  liblsan0                        manpages                                python3-slugify
+  fonts-font-awesome                    liblsof0                        manpages-dev                            python3-smbc
+  fonts-font-awesome-legacy             libltdl7                        mariadb-client                          python3-smmap
+  fonts-freefont-ttf                    liblua5.3-0                     mariadb-client-core                     python3-snappy
+  fonts-lato                            liblua5.4-0                     mariadb-common                          python3-sniffio
+  fonts-liberation                      libluajit-5.1-2                 mariadb-plugin-provider-bzip2           python3-socketio
+  fonts-liberation-sans-narrow          libluajit-5.1-common            mariadb-plugin-provider-lz4             python3-socks
+  fonts-lmodern                         liblwp-mediatypes-perl          mariadb-plugin-provider-lzma            python3-sortedcontainers
+  fonts-lyx                             liblwp-protocol-https-perl      mariadb-plugin-provider-lzo             python3-soupsieve
+  fonts-noto-color-emoji                liblz1                          mariadb-plugin-provider-snappy          python3-spinners
+  fonts-noto-mono                       liblz4-dev                      mariadb-server                          python3-sqlalchemy
+  fonts-roboto-slab                     liblzf1                         mariadb-server-compat                   python3-sqlalchemy-ext
+  fonts-texgyre                         liblzma-dev                     mariadb-server-core                     python3-sqlalchemy-schemadisplay
+  fonts-texgyre-math                    liblzo2-2                       maskprocessor                           python3-sqlalchemy-utc
+  fonts-urw-base35                      libmagic-dev                    masscan                                 python3-sqlparse
+  fping                                 libmagic-mgc                    media-types                             python3-stack-data
+  freerdp-x11                           libmagic1t64                    medusa                                  python3-stamina
+  freerdp3-x11                          libmagickcore-7.q16-10          mesa-libgallium                         python3-standard-imghdr
+  freetds-common                        libmagickcore-7.q16-10-extra    mesa-vulkan-drivers                     python3-starlette
+  ftp                                   libmagickwand-7.q16-10          metasploit-framework                    python3-status
+  fuse3                                 libmailtools-perl               mimikatz                                python3-stix2
+  g++                                   libmariadb3                     mingw-w64-common                        python3-stix2-patterns
+  g++-16                                libmath-random-isaac-perl       mingw-w64-i686-dev                      python3-stone
+  g++-16-x86-64-linux-gnu               libmath-random-isaac-xs-perl    mingw-w64-x86-64-dev                    python3-sympy
+  g++-x86-64-linux-gnu                  libmaxminddb0                   minicom                                 python3-syslog-rfc5424-formatter
+  galera-4                              libmbim-glib4                   miredo                                  python3-tables
+  gawk                                  libmbim-proxy                   mitmproxy                               python3-tables-lib
+  gcc                                   libmbim-utils                   mkdocs                                  python3-tabulate
+  gcc-16                                libmd4c0                        mkdocs-get-deps                         python3-talloc
+  gcc-16-x86-64-linux-gnu               libmemcached11t64               modemmanager                            python3-tdb
+  gcc-mingw-w64-base                    libmicrohttpd12t64              mosquitto                               python3-tempita
+  gcc-mingw-w64-i686-win32              libmime-charset-perl            mpg123                                  python3-tempora
+  gcc-mingw-w64-i686-win32-runtime      libminizip1t64                  msfpc                                   python3-tenacity
+  gcc-mingw-w64-x86-64-win32            libmm-glib0                     mtd-utils                               python3-termcolor
+  gcc-mingw-w64-x86-64-win32-runtime    libmnl0                         multimac                                python3-terminaltables3
+  gcc-x86-64-linux-gnu                  libmongoc2-2                    mupdf-tools                             python3-tinycss2
+  gdal-data                             libmongocrypt0                  mysql-common                            python3-tinyhtml5
+  gdal-plugins                          libmosquitto1                   nasm                                    python3-tk
+  gdisk                                 libmotif-common                 nbtscan                                 python3-tld
+  geoclue-2.0                           libmp3lame0                     ncompress                               python3-tldextract
+  geoip-database                        libmpc3                         ncrack                                  python3-tls-parser
+  ghostscript                           libmpfi0                        ncurses-hexedit                         python3-tomlkit
+  ghp-import                            libmpfr6                        ncurses-term                            python3-tornado
+  gir1.2-atk-1.0                        libmpg123-0t64                  ndiff                                   python3-tqdm
+  gir1.2-freedesktop                    libmtdev1t64                    net-tools                               python3-traitlets
+  gir1.2-gdkpixbuf-2.0                  libmujs3                        netbase                                 python3-translationstring
+  gir1.2-girepository-3.0               libmuparser2v5                  netcat-traditional                      python3-trie
+  gir1.2-glib-2.0                       libmupdf28.2                    netdiscover                             python3-trio
+  gir1.2-gtk-3.0                        libmysofa1                      netexec                                 python3-trio-websocket
+  gir1.2-handy-1                        libncurses-dev                  netmask                                 python3-truststore
+  gir1.2-harfbuzz-0.0                   libncurses6                     netpbm                                  python3-twisted
+  gir1.2-notify-0.7                     libncursesw6                    netsed                                  python3-txaio
+  gir1.2-packagekitglib-1.0             libneon27t64-gnutls             netsniff-ng                             python3-typeguard
+  gir1.2-pango-1.0                      libnet-cidr-perl                netstandard-targeting-pack-2.1          python3-typeshed
+  gir1.2-polkit-1.0                     libnet-dbus-perl                nfs-common                              python3-typing-extensions
+  gir1.2-secret-1                       libnet-dns-perl                 nftables                                python3-typing-inspection
+  gir1.2-vte-2.91                       libnet-dns-sec-perl             nginx                                   python3-tzlocal
+  git                                   libnet-http-perl                nginx-common                            python3-u-msgpack
+  git-man                               libnet-ip-perl                  ngrep                                   python3-ubjson
+  glib-networking                       libnet-libidn2-perl             nikto                                   python3-uc-micro
+  glib-networking-common                libnet-netmask-perl             nmap                                    python3-ufolib2
+  glib-networking-services              libnet-server-perl              nmap-common                             python3-uharfbuzz
+  glycin-loaders                        libnet-smtp-ssl-perl            node-normalize.css                      python3-ujson
+  glycin-thumbnailers                   libnet-snmp-perl                node-popper2                            python3-unicrypto
+  gnome-themes-extra-data               libnet-ssleay-perl              notification-daemon                     python3-unidecode
+  gnupg                                 libnet-whois-ip-perl            notus-scanner                           python3-uritemplate
+  gnupg-l10n                            libnet9                         nsis                                    python3-urllib3
+  gnupg-utils                           libnetcdf22                     nsis-common                             python3-urwid
+  gnutls-bin                            libnetfilter-conntrack3         ntfs-3g                                 python3-userpath
+  gobuster                              libnetfilter-queue1             ntpsec                                  python3-uvicorn
+  gophish                               libnetpbm11t64                  nuclei                                  python3-uvloop
+  gparted                               libnewt0.52                     numba-doc                               python3-validators
+  gparted-common                        libnfnetlink0                   ocl-icd-libopencl1                      python3-venusian
+  gpg                                   libnfsidmap1                    offsec-awae-python2                     python3-venv
+  gpg-agent                             libnftables1                    onesixtyone                             python3-vine
+  gpg-wks-client                        libnftnl11                      openjdk-25-jre                          python3-virtualenv
+  gpgconf                               libnghttp2-14                   openjdk-25-jre-headless                 python3-wapiti-swagger
+  gpgsm                                 libnghttp3-9                    opensc                                  python3-watchdog
+  gpgv                                  libngtcp2-16                    opensc-pkcs11                           python3-wcwidth
+  gpp-decrypt                           libngtcp2-crypto-gnutls8        openssh-client                          python3-webargs
+  graphviz                              libngtcp2-crypto-ossl0          openssh-client-ssh1                     python3-webcolors
+  greenbone-feed-sync                   libnids1.21t64                  openssh-common                          python3-webencodings
+  groff-base                            libnl-3-200                     openssh-server                          python3-webob
+  gsettings-desktop-schemas             libnl-genl-3-200                openssh-sftp-server                     python3-websocket
+  gss-ntlmssp                           libnl-route-3-200               openssl                                 python3-websockets
+  gtk-update-icon-cache                 libnm0                          openvas-scanner                         python3-websockify
+  guymager                              libnorm1t64                     openvpn                                 python3-werkzeug
+  gvmd                                  libnotify4                      ophcrack                                python3-wheel
+  gvmd-common                           libnpth0t64                     ophcrack-cli                            python3-whois
+  hash-identifier                       libnsl2                         oracle-instantclient-basic              python3-winacl
+  hashcat                               libnsl3                         ospd-openvas                            python3-wrapt
+  hashcat-data                          libnspr4                        parted                                  python3-wsaccel
+  hashcat-utils                         libnss-mdns                     passing-the-hash                        python3-wsproto
+  hashdeep                              libnss-systemd                  patator                                 python3-wtforms
+  hashid                                libnss3                         patch                                   python3-xlsxwriter
+  hdparm                                libntfs-3g91                    pci.ids                                 python3-xmltodict
+  hicolor-icon-theme                    libntlm0                        pcscd                                   python3-yaml
+  hotpatch                              libnuma1                        pdf-parser                              python3-yara
+  hping3                                libnumber-bytes-human-perl      pdfid                                   python3-yarl
+  httpx-toolkit                         libobjc-16-dev                  peass                                   python3-zapv2
+  hunspell-en-us                        libobjc4                        perl                                    python3-zc.lockfile
+  hwloc                                 libodbc2                        perl-modules-5.42                       python3-zipp
+  hydra                                 libodbccr2                      perl-openssl-defaults                   python3-zlib-wrapper
+  hydra-gtk                             libodbcinst2                    pgcli                                   python3-zombie-telnetlib
+  hyperion                              libogg0                         photorec                                python3-zope.deprecation
+  hyphen-en-us                          libole-storage-lite-perl        php                                     python3-zope.event
+  i2c-tools                             libonig5                        php-common                              python3-zope.interface
+  ibus-gtk3                             libonnx1l                       php-mysql                               python3-zopfli
+  ieee-data                             libonnxruntime-providers        php8.4                                  python3-zstandard
+  ifenslave                             libonnxruntime1.23              php8.4-cli                              python3.14
+  ifupdown                              libopenal-data                  php8.4-common                           python3.14-dev
+  iio-sensor-proxy                      libopenal1                      php8.4-mysql                            python3.14-minimal
+  ike-scan                              libopencore-amrnb0              php8.4-opcache                          python3.14-tk
+  imagemagick                           libopenexr-3-4-33               php8.4-readline                         python3.14-venv
+  imagemagick-7-common                  libopengl-dev                   pinentry-curses                         qsslcaudit
+  imagemagick-7.q16                     libopengl0                      pipal                                   qt5-gtk-platformtheme
+  impacket-scripts                      libopenh264-8                   pipx                                    qt6-base-dev-tools
+  inetsim                               libopenjp2-7                    pixiewps                                qt6-gtk-platformtheme
+  inetutils-telnet                      libopenjph0.32                  pkexec                                  qt6-qpa-plugins
+  initramfs-tools                       libopenmpt0t64                  plocate                                 qt6-svg-plugins
+  initramfs-tools-bin                   libopus0                        pocl-opencl-icd                         qt6-translations-l10n
+  initramfs-tools-core                  libopusfile0                    polenum                                 qt6-wayland
+  iodine                                libout123-0t64                  polkitd                                 qttranslations5-l10n
+  ipp-usb                               libp11-kit0                     poppler-data                            qtwayland5
+  iproute2                              libpackagekit-glib2-18          poppler-utils                           racc
+  iptables                              libpaho-mqtt1.3                 postgresql                              radare2
+  ipython3                              libpam-cap                      postgresql-18                           rake
+  iso-codes                             libpam-systemd                  postgresql-18-jit                       rdesktop
+  isympy-common                         libpango-1.0-0                  postgresql-18-pg-gvm                    read-edid
+  isympy3                               libpangocairo-1.0-0             postgresql-client-18                    readline-common
+  iw                                    libpangoft2-1.0-0               postgresql-client-common                reaver
+  java-common                           libpangomm-1.4-1v5              postgresql-common                       rebind
+  java-wrappers                         libpangoxft-1.0-0               powermgmt-base                          recon-ng
+  javascript-common                     libpaper-utils                  powershell                              recordmydesktop
+  john                                  libpaper2                       powershell-empire                       redis-server
+  john-data                             libparse-recdescent-perl        powersploit                             redis-tools
+  kali-linux-core                       libparted-fs-resize0t64         preview-latex-style                     redsocks
+  kali-linux-headless                   libparted2t64                   procps                                  responder
+  kali-system-cli                       libpathplan4                    proj-bin                                rfkill
+  kali-system-core                      libpcap0.8t64                   proj-data                               rpcbind
+  kali-system-gui                       libpci3                         proxychains4                            rpm
+  kali-tools-top10                      libpciaccess0                   proxytunnel                             rpm-common
+  kali-tweaks                           libpcre2-16-0                   psmisc                                  rpm2cpio
+  kbd                                   libpcre2-posix3                 ptunnel                                 rsh-redone-client
+  keyboard-configuration                libpcre3                        publicsuffix                            rsmangler
+  keyutils                              libpcsclite1                    pv                                      rsync
+  kismet                                libpdfbox-java                  pwnat                                   ruby
+  kismet-capture-antsdr-droneid         libperl4-corelibs-perl          pyinstaller                             ruby-activesupport
+  kismet-capture-common                 libperl5.42                     pyinstaller-hooks-contrib               ruby-addressable
+  kismet-capture-freaklabs-zigbee       libpfm4                         pyqt6-dev-tools                         ruby-base64
+  kismet-capture-hak5-wifi-coconut      libpgm-5.3-0t64                 python-apt-common                       ruby-builder
+  kismet-capture-linux-bluetooth        libpicohttpparser1              python-babel-localedata                 ruby-bundler
+  kismet-capture-linux-wifi             libpipeline1                    python-cffi                             ruby-cms-scanner
+  kismet-capture-nrf-51822              libpipewire-0.3-0t64            python-cffi-backend                     ruby-concurrent
+  kismet-capture-nrf-52840              libpipewire-0.3-common          python-is-python3                       ruby-connection-pool
+  kismet-capture-nrf-mousejack          libpixman-1-0                   python-matplotlib-data                  ruby-csv
+  kismet-capture-nxp-kw41z              libpkcs11-helper1t64            python-odf-doc                          ruby-dev
+  kismet-capture-radiacode-usb          libplist-2.0-4                  python-odf-tools                        ruby-did-you-mean
+  kismet-capture-rtl433                 libpng16-16t64                  python-tables-data                      ruby-domain-name
+  kismet-capture-rtladsb                libpocl2-common                 python-tinycss2-common                  ruby-erubi
+  kismet-capture-rz-killerbee           libpocl2t64                     python2                                 ruby-ethon
+  kismet-capture-serial-radview         libpod-parser-perl              python2-minimal                         ruby-ferrum
+  kismet-capture-ti-cc-2531             libpolkit-agent-1-0             python2.7                               ruby-ffi
+  kismet-capture-ti-cc-2540             libpolkit-gobject-1-0           python2.7-minimal                       ruby-get-process-mem
+  kismet-capture-ubertooth-one          libpoppler-cpp3                 python3                                 ruby-gssapi
+  kismet-core                           libpoppler-glib8t64             python3-aardwolf                        ruby-gyoku
+  kismet-logtools                       libpoppler162                   python3-adblockparser                   ruby-http-cookie
+  klibc-utils                           libpopt0                        python3-aesedb                          ruby-httpclient
+  kmod                                  libportaudio2                   python3-aiocmd                          ruby-i18n
+  krb5-locales                          libportmidi2                    python3-aioconsole                      ruby-ipaddress
+  krb5-multidev                         libpostal-data                  python3-aiodns                          ruby-json
+  laptop-detect                         libpotrace0                     python3-aiofiles                        ruby-levenshtein
+  laudanum                              libpq5                          python3-aiohappyeyeballs                ruby-little-plugger
+  lbd                                   libproc2-1                      python3-aiohttp                         ruby-logging
+  ldap-utils                            libproj25                       python3-aiohttp-socks                   ruby-mime
+  legion                                libprotobuf-c1                  python3-aiomultiprocess                 ruby-mime-types
+  less                                  libprotobuf-lite32t64           python3-aioquic                         ruby-mime-types-data
+  lib32gcc-s1                           libprotobuf32t64                python3-aiosignal                       ruby-mini-exiftool
+  lib32stdc++6                          libproxy1v5                     python3-aiosmb                          ruby-mini-portile2
+  libaacs0                              libproxychains4                 python3-aiosqlite                       ruby-minitest
+  libabsl20260526                       libpsl5t64                      python3-aiowinreg                       ruby-multi-json
+  libaec0                               libptexenc1                     python3-ajpy                            ruby-net-http-digest-auth
+  libafflib0t64                         libpthreadpool0                 python3-alembic                         ruby-net-telnet
+  libaio1t64                            libpulse0                       python3-altgraph                        ruby-nokogiri
+  libalgorithm-diff-perl                libpyside6-py3-6.11             python3-amqp                            ruby-nori
+  libalgorithm-diff-xs-perl             libpython2-stdlib               python3-aniso8601                       ruby-ntlm
+  libalgorithm-merge-perl               libpython2.7-minimal            python3-annotated-doc                   ruby-oj
+  libaom3                               libpython2.7-stdlib             python3-annotated-types                 ruby-opt-parse-validator
+  libapache-pom-java                    libpython3-dev                  python3-antlr4                          ruby-pkg-config
+  libapache2-mod-php                    libpython3-stdlib               python3-anyio                           ruby-progressbar
+  libapache2-mod-php8.4                 libpython3.14                   python3-apispec                         ruby-public-suffix
+  libapparmor1                          libpython3.14-dev               python3-apispec-webframeworks           ruby-rchardet
+  libapr1t64                            libpython3.14-minimal           python3-apt                             ruby-readline-ext
+  libaprutil1-dbd-sqlite3               libpython3.14-stdlib            python3-arc4                            ruby-ruby2-keywords
+  libaprutil1-ldap                      libqcustomplot2.1               python3-argcomplete                     ruby-rubygems
+  libaprutil1t64                        libqhull-r8.0                   python3-argon2                          ruby-sdbm
+  libapt-pkg-perl                       libqmi-glib5                    python3-argon2-cffi-bindings            ruby-snmp
+  libarchive-zip-perl                   libqmi-proxy                    python3-arrow                           ruby-spider
+  libarchive13t64                       libqmi-utils                    python3-asciitree                       ruby-sqlite3
+  libargon2-1                           libqpdf30                       python3-asgiref                         ruby-sys-proctable
+  libarmadillo15                        libqrtr-glib0                   python3-asn1crypto                      ruby-typhoeus
+  libarpack2t64                         libqscintilla2-qt5-15           python3-asn1tools                       ruby-tzinfo
+  libasan8                              libqscintilla2-qt5-l10n         python3-astroid                         ruby-unf
+  libasound2-data                       libqt5charts5                   python3-asttokens                       ruby-webrick
+  libasound2t64                         libqt5core5t64                  python3-asyauth                         ruby-websocket-driver
+  libaspell15                           libqt5dbus5t64                  python3-asysocks                        ruby-websocket-extensions
+  libassuan9                            libqt5designer5                 python3-attr                            ruby-winrm
+  libasyncns0                           libqt5gui5t64                   python3-autobahn                        ruby-winrm-fs
+  libatk-bridge2.0-0t64                 libqt5help5                     python3-autocommand                     ruby-xmlrpc
+  libatk-wrapper-java                   libqt5network5t64               python3-automat                         ruby-yajl
+  libatk-wrapper-java-jni               libqt5opengl5t64                python3-babel                           ruby-zip
+  libatk1.0-0t64                        libqt5positioning5              python3-backoff                         ruby3.3
+  libatkmm-1.6-1v5                      libqt5printsupport5t64          python3-base58                          ruby3.3-dev
+  libatomic1                            libqt5qml5                      python3-bcrypt                          ruby3.3-doc
+  libatspi2.0-0t64                      libqt5qmlmodels5                python3-bidict                          rubygems-integration
+  libauthen-sasl-perl                   libqt5quick5                    python3-billiard                        runit-helper
+  libavahi-client3                      libqt5quickwidgets5             python3-binwalk                         sakis3g
+  libavahi-common-data                  libqt5sql5-sqlite               python3-bitstruct                       samba
+  libavahi-common3                      libqt5sql5t64                   python3-bleach                          samba-common
+  libavahi-core7                        libqt5svg5                      python3-blinker                         samba-common-bin
+  libavahi-glib1                        libqt5test5t64                  python3-bottle                          samba-libs
+  libavcodec63                          libqt5waylandclient5            python3-bottleneck                      samdump2
+  libavformat63                         libqt5waylandcompositor5        python3-brotli                          sane-airscan
+  libavif16                             libqt5webchannel5               python3-browser-cookie3                 sane-utils
+  libavutil61                           libqt5webengine-data            python3-bs4                             sasquatch
+  libb2-1                               libqt5webengine5                python3-cairo                           sbd
+  libbcg729-0                           libqt5webenginecore5            python3-capstone                        scalpel
+  libbdplus0                            libqt5webenginewidgets5         python3-cbor                            screen
+  libbfio1                              libqt5widgets5t64               python3-cbor2                           scrounge-ntfs
+  libbinutils                           libqt5xml5t64                   python3-celery                          sendemail
+  libbit-vector-perl                    libqt6core5compat6              python3-censys                          sensible-utils
+  libblas3                              libqt6core6t64                  python3-certifi                         set
+  libblosc1                             libqt6dbus6                     python3-cffi                            sgml-base
+  libblosc2-9                           libqt6gui6                      python3-cffi-backend                    shared-mime-info
+  libbluetooth3                         libqt6multimedia6               python3-chardet                         skipfish
+  libbluray4                            libqt6network6                  python3-charset-normalizer              sleuthkit
+  libbpf1                               libqt6opengl6                   python3-cheroot                         smartmontools
+  libbrotli1                            libqt6openglwidgets6            python3-cherrypy-cors                   smbclient
+  libbson2-2                            libqt6printsupport6             python3-cherrypy3                       smbmap
+  libbtbb1                              libqt6qml6                      python3-cli-helpers                     smtp-user-enum
+  libbytes-random-secure-perl           libqt6qmlmeta6                  python3-click                           snmp
+  libc-dev-bin                          libqt6qmlmodels6                python3-click-didyoumean                snmpcheck
+  libc-l10n                             libqt6qmlworkerscript6          python3-click-repl                      snmpd
+  libc6-dev                             libqt6quick6                    python3-cmd2                            socat
+  libc6-i386                            libqt6sql6                      python3-colorama                        sparta-scripts
+  libcairo-gobject2                     libqt6sql6-sqlite               python3-configobj                       sphinx-rtd-theme-common
+  libcairo2                             libqt6svg6                      python3-constantly                      spiderfoot
+  libcairomm-1.0-1v5                    libqt6test6                     python3-contourpy                       spike
+  libcap2                               libqt6waylandclient6            python3-cpuinfo                         spooftooph
+  libcap2-bin                           libqt6waylandcompositor6        python3-croniter                        sqlite3
+  libcapstone-dev                       libqt6widgets6                  python3-cryptography                    sqlitebrowser
+  libcapstone5                          libqt6wlshellintegration6       python3-cssselect                       sqlmap
+  libcares2                             libqt6xml6                      python3-cssselect2                      sqsh
+  libcarp-clan-perl                     libquadmath0                    python3-cups                            squashfs-tools
+  libcbor0.10                           librabbitmq4                    python3-cupshelpers                     ssl-cert
+  libcc1-0                              libradare2-6.0.0t64             python3-cvss                            ssldump
+  libccid                               libradare2-common               python3-cycler                          sslh
+  libcdt6                               libradare2-dev                  python3-dateutil                        sslscan
+  libcfitsio10t64                       libradcli4                      python3-dbus                            sslsplit
+  libcgi-fast-perl                      libraqm0                        python3-decorator                       sslyze
+  libcgi-pm-perl                        librav1e0.8                     python3-defusedxml                      starkiller
+  libcgraph8                            libraw25                        python3-deprecated                      statsprocessor
+  libchromaprint1                       libre2-11                       python3-deprecation                     stunnel
+  libcjson1                             libreadline8t64                 python3-dev                             stunnel4
+  libclang-common-21-dev                libregexp-assemble-perl         python3-dicttoxml                       subversion
+  libclang-cpp21                        libregexp-ipv6-perl             python3-discovery                       sudo
+  libclang-rt-21-dev                    librist4                        python3-diskcache                       swaks
+  libclang1-21                          librpm-sequoia-1                python3-distlib                         sysstat
+  libcli1.10t64                         librpm10                        python3-distro                          system-config-printer
+  libclone-perl                         librpmbuild10                   python3-django                          system-config-printer-common
+  libcloudproviders0                    librpmio10                      python3-dnslib                          system-config-printer-udev
+  libcmark-gfm-extensions0.29.0.gfm.13  librpmsign10                    python3-dnspython                       systemd
+  libcmark-gfm0.29.0.gfm.13             librsvg2-2                      python3-docopt                          systemd-cryptsetup
+  libcodec2-1.2                         librsvg2-common                 python3-docx                            systemd-sysv
+  libcolord2                            librtlsdr0                      python3-donut                           systemd-tpm
+  libcolorhug2                          librtmp1                        python3-dotenv                          systemd-userdbd
+  libcom-err2                           librttopo1                      python3-dploot                          t1utils
+  libcommon-sense-perl                  libruby                         python3-dropbox                         tasksel
+  libcommons-logging-java               libruby3.3                      python3-dsinternals                     tasksel-data
+  libcommons-parent-java                libsamplerate0                  python3-dunamai                         tcl
+  libcompress-raw-lzma-perl             libsane-common                  python3-ecdsa                           tcl-expect
+  libconfig15                           libsane1                        python3-elastic-transport               tcl8.6
+  libcpuinfo0                           libsasl2-2                      python3-elasticsearch                   tcl9.1
+  libcrypt-random-seed-perl             libsasl2-modules                python3-email-validator                 tcpdump
+  libcrypt-rc4-perl                     libsasl2-modules-db             python3-engineio                        tcpick
+  libcrypt-ssleay-perl                  libsbc1                         python3-ephem                           tcpreplay
+  libcrypt-urandom-perl                 libsdl2-2.0-0                   python3-et-xmlfile                      tdb-tools
+  libcrypto++8t64                       libsdl2-image-2.0-0             python3-executing                       telnet
+  libcryptsetup12                       libsdl2-mixer-2.0-0             python3-exifread                        testdisk
+  libct4                                libsdl2-ttf-2.0-0               python3-faraday-agent-parameters-types  tex-common
+  libctf-nobfd0                         libsdl3-0                       python3-faraday-plugins                 tex-gyre
+  libctf0                               libsecret-1-0                   python3-fastapi                         texlive-base
+  libcups2t64                           libsecret-common                python3-feedparser                      texlive-binaries
+  libcupsfilters1t64                    libsensors-config               python3-filedepot                       texlive-fonts-recommended
+  libcurl3t64-gnutls                    libsensors5                     python3-filelock                        texlive-latex-base
+  libcurl4-gnutls                       libserd-0-0                     python3-filetype                        texlive-latex-extra
+  libcurl4t64                           libserf-1-1                     python3-filteralchemy                   texlive-latex-recommended
+  libdaemon0                            libsframe3                      python3-flasgger                        texlive-pictures
+  libdata-dump-perl                     libsharpyuv0                    python3-flask                           texlive-plain-generic
+  libdate-calc-perl                     libshiboken6-py3-6.11           python3-flask-celery-helper             tftp-hpa
+  libdate-calc-xs-perl                  libshine3                       python3-flask-classful                  thc-ipv6
+  libdate-manip-perl                    libsigc++-2.0-0v5               python3-flask-kvsession                 thc-pptp-bruter
+  libdatrie1                            libsimdutf35                    python3-flask-limiter                   theharvester
+  libdav1d7                             libskia146                      python3-flask-login                     tightvncpasswd
+  libdbi-perl                           libslang2                       python3-flask-mail                      tightvncserver
+  libdbus-1-3                           libsm-dev                       python3-flask-principal                 timgm6mb-soundfont
+  libdconf1                             libsm6                          python3-flask-restful                   tipa
+  libde265-0                            libsmb2-6                       python3-flask-security                  tk
+  libdecor-0-0                          libsmbclient0                   python3-flask-socketio                  tk8.6
+  libdecor-0-plugin-1-gtk               libsmi2t64                      python3-flask-sqlalchemy                tmux
+  libdeflate0                           libsnappy1v5                    python3-flaskext.wtf                    tnftp
+  libdevmapper1.02.1                    libsndfile1                     python3-flatbuffers                     toilet-fonts
+  libdigest-bubblebabble-perl           libsnmp-base                    python3-fonttools                       tpm-udev
+  libdigest-hmac-perl                   libsnmp45                       python3-fqdn                            traceroute
+  libdigest-perl-md5-perl               libsocket6-perl                 python3-frozenlist                      tree
+  libdisplay-info3                      libsodium26                     python3-fuzzywuzzy                      tshark
+  libdjvulibre-text                     libsombok3                      python3-gdal                            tzdata-legacy
+  libdjvulibre21                        libsord-0-0                     python3-gevent                          ucf
+  libdlt3                               libsoup-3.0-0                   python3-gevent-websocket                udev
+  libdnnl3.6                            libsoup-3.0-common              python3-gexf                            udptunnel
+  libdouble-conversion3                 libsoxr0                        python3-gi                              unicode-data
+  libdpkg-perl                          libspa-0.2-modules              python3-gi-cairo                        unicorn-magic
+  libdrm-amdgpu1                        libspandsp2t64                  python3-git                             unicornscan
+  libdrm-common                         libspatialite8t64               python3-gitdb                           unix-privesc-check
+  libdrm-intel1                         libspeex1                       python3-gnupg                           unixodbc-common
+  libdrm2                               libspeexdsp1                    python3-greenlet                        unrar
+  libduktape207                         libspreadsheet-parseexcel-perl  python3-gssapi                          unzip
+  libdumbnet1                           libspreadsheet-writeexcel-perl  python3-gvm                             update-inetd
+  libdvdnav4                            libsqlcipher2                   python3-h11                             upower
+  libdvdread8t64                        libsqlite3-0                    python3-h2                              upx-ucl
+  libdw1t64                             libsratom-0-0                   python3-hamcrest                        urlscan
+  libeac3                               libsrt1.5-gnutls                python3-hpack                           usb-modeswitch
+  libebur128-1                          libss2                          python3-html2text                       usb-modeswitch-data
+  libedit2                              libssh-4                        python3-html5lib                        usb.ids
+  libegl-mesa0                          libssh2-1t64                    python3-httpagentparser                 usbmuxd
+  libegl1                               libsso-mib0                     python3-httpcore                        usbutils
+  libelf1t64                            libstdc++-16-dev                python3-httpcore2                       user-session-migration
+  libenchant-2-2                        libstring-crc32-perl            python3-httpx                           uuid-dev
+  libencode-locale-perl                 libstring-random-perl           python3-httpx-ntlm                      vboot-kernel-utils
+  libencode-perl                        libsuperlu7                     python3-httpx2                          vboot-utils
+  libepoxy0                             libsvn1                         python3-humanize                        vim
+  liberror-perl                         libsvtav1enc4                   python3-hupper                          vim-common
+  libev4t64                             libswresample7                  python3-hyperframe                      vim-runtime
+  libevdev2                             libswscale10                    python3-hyperlink                       vim-tiny
+  libevent-2.1-7t64                     libsybdb5                       python3-idna                            vlan
+  libevent-core-2.1-7t64                libsyn123-0t64                  python3-impacket                        voiphopper
+  libevent-openssl-2.1-7t64             libsynctex2                     python3-incremental                     vpnc
+  libevent-pthreads-2.1-7t64            libsystemd-shared               python3-inflect                         vpnc-scripts
+  libewf2                               libsz2                          python3-iniconfig                       wafw00f
+  libexif12                             libtalloc2                      python3-invoke                          wapiti
+  libexiv2-28                           libtasn1-6                      python3-ipwhois                         wce
+  libexiv2-data                         libtbb12                        python3-ipy                             weasyprint
+  libexpat1                             libtbbbind-2-5                  python3-ipython                         webshells
+  libexpat1-dev                         libtbbmalloc2                   python3-ipython-pygments-lexers         weevely
+  libext2fs2t64                         libtcl8.6                       python3-isoduration                     wfuzz
+  libfakeroot                           libtcl9.1                       python3-itsdangerous                    wget
+  libfalcosecurity0.23                  libtdb1                         python3-jaraco.collections              whatweb
+  libfbclient2                          libteckit0                      python3-jaraco.context                  whois
+  libfcgi-bin                           libtesseract5                   python3-jaraco.functools                wifite
+  libfcgi-perl                          libtevent0t64                   python3-jaraco.text                     windows-binaries
+  libfcgi0t64                           libtexlua53-5                   python3-jedi                            wireless-regdb
+  libffi-dev                            libtext-charwidth-perl          python3-jeepney                         wireshark
+  libffi8                               libtext-csv-perl                python3-jinja2                          wireshark-common
+  libfftw3-double3                      libtext-csv-xs-perl             python3-joblib                          wordlists
+  libfftw3-single3                      libtext-iconv-perl              python3-jq                              wpasupplicant
+  libfido2-1                            libtext-wrapi18n-perl           python3-json-pointer                    wpscan
+  libfile-basedir-perl                  libthai-data                    python3-jsonschema                      x11-apps
+  libfile-desktopentry-perl             libthai0                        python3-jsonschema-specifications       x11-common
+  libfile-fcntllock-perl                libtheora1                      python3-jwcrypto                        x11-utils
+  libfile-listing-perl                  libtheoradec2                   python3-jwt                             x11-xkb-utils
+  libfile-mimeinfo-perl                 libtheoraenc2                   python3-kaitaistruct                    x11-xserver-utils
+  libfl-dev                             libtie-ixhash-perl              python3-kiwisolver                      x11proto-dev
+  libfl2                                libtiff6                        python3-kombu                           xar
+  libflac14                             libtimedate-perl                python3-krb5                            xauth
+  libfluidsynth3                        libtirpc-common                 python3-ldap3                           xbitmaps
+  libfmt11                              libtirpc3t64                    python3-ldapdomaindump                  xdg-user-dirs
+  libfont-afm-perl                      libtk8.6                        python3-ldb                             xdg-utils
+  libfontbox-java                       libtommath1                     python3-legacy-cgi                      xfonts-base
+  libfontconfig1                        libtry-tiny-perl                python3-legacycrypt                     xfonts-encodings
+  libfontembed1t64                      libts0t64                       python3-levenshtein                     xfonts-utils
+  libfontenc1                           libtsan2                        python3-libnmap                         xkb-data
+  libfreerdp-client3-3                  libtsk23                        python3-limits                          xml-core
+  libfreerdp3-3                         libtss2-esys-3.0.2-0t64         python3-linkify-it                      xml-twig-tools
+  libfreetype6                          libtss2-mu-4.0.1-0t64           python3-livereload                      xorg-sgml-doctools
+  libfreexl1                            libtss2-rc0t64                  python3-llvmlite                        xserver-common
+  libfribidi0                           libtss2-sys1t64                 python3-log-symbols                     xserver-xephyr
+  libfstrm0                             libtss2-tcti-cmd0t64            python3-loguru                          xsltproc
+  libfsverity0                          libtss2-tcti-device0t64         python3-lsassy                          xterm
+  libftdi1-2                            libtss2-tcti-mssim0t64          python3-lunr                            xtightvncviewer
+  libfuse3-4                            libtss2-tcti-swtpm0t64          python3-lxml                            xtrans-dev
+  libfyba0t64                           libturbojpeg0                   python3-lz4                             xvfb
+  libgav1-2                             libtwolame0                     python3-macholib                        xxd
+  libgbm1                               libtypes-serialiser-perl        python3-magic                           xz-utils
+  libgc1                                libubertooth1                   python3-mako                            zenmap
+  libgcc-16-dev                         libubsan1                       python3-markdown                        zip
+  libgcrypt20                           libuchardet0                    python3-markdown-it                     zipcmp
+  libgd3                                libucl1                         python3-markdown2                       zipmerge
+  libgdal39                             libudfread3                     python3-markupsafe                      ziptool
+  libgdbm-compat4t64                    libunbound8                     python3-marshmallow                     zlib1g-dev
+  libgdbm6t64                           libunicode-linebreak-perl       python3-marshmallow-sqlalchemy          zsh
+  libgdk-pixbuf-2.0-0                   libunicode-map-perl             python3-masky                           zsh-autosuggestions
+  libgdk-pixbuf2.0-common               libunistring5                   python3-matplotlib                      zsh-common
+  libgeoip1t64                          libunsafessl1.0.2               python3-matplotlib-inline               zsh-syntax-highlighting
+  libgeos-c1t64                         libunwind8                      python3-md2pdf                          zstd
+  libgeos3.15.0                         libupower-glib3                 python3-mdurl
+  libgeotiff5                           liburcu8t64                     python3-mechanize
+  libgfortran5                          liburi-perl                     python3-memcache
+
+Suggested packages:
+  lz4                                libnvcuvid1                  keychain                                        python-pygame-doc
+  lzop                               libnvidia-encode1            libpam-ssh                                      timidity
+  7zip-doc                           libbluray-bdj                monkeysphere                                    python-pygments-doc
+  7zip-standalone                    libc-devtools                ssh-askpass                                     ttf-bitstream-vera
+ 
+ 
+ ....
+ 
+ 
+Get:2350 http://kali.download/kali kali-rolling/main amd64 wireless-regdb all 2026.09.03-1 [10.9 kB]
+Get:2353 http://http.kali.org/kali kali-rolling/main amd64 xar amd64 1.8.0.498-3+b2 [15.9 kB]
+Get:2354 http://kali.download/kali kali-rolling/main amd64 xdg-user-dirs amd64 0.20-1 [41.9 kB]
+Get:2355 http://http.kali.org/kali kali-rolling/main amd64 xfonts-base all 1:1.0.5+nmu1 [5895 kB]
+Get:2357 http://kali.download/kali kali-rolling/main amd64 gnupg-utils amd64 2.4.9-8 [200 kB]
+Fetched 3192 MB in 6min 22s (8362 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79, <STDIN> line 2357.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.42.3 /usr/local/share/perl/5.42.3 /usr/lib/x86_64-linux-gnu/perl5/5.42 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.42 /usr/share/perl/5.42 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 2357.)
+debconf: falling back to frontend: Teletype
+Extracting templates from packages: 100%
+Preconfiguring packages ...
+Configuring keyboard-configuration
+----------------------------------
+
+Please select the layout matching the keyboard for this machine.
+
+  1. English (US)                                             17. English (US) - English (Macintosh, ABC, ISO)
+  2. English (US) - Cherokee                                  18. English (US) - English (Norman)
+  3. English (US) - English (Colemak)                         19. English (US) - English (US, Symbolic)
+  4. English (US) - English (Colemak-DH ISO)                  20. English (US) - English (US, alt. intl.)
+  5. English (US) - English (Colemak-DH Ortholinear)          21. English (US) - English (US, euro on 5)
+  6. English (US) - English (Colemak-DH Wide ISO)             22. English (US) - English (US, intl., with dead keys)
+  7. English (US) - English (Colemak-DH Wide)                 23. English (US) - English (Workman)
+  8. English (US) - English (Colemak-DH)                      24. English (US) - English (Workman, intl., with dead keys)
+  9. English (US) - English (Dvorak)                          25. English (US) - English (classic Dvorak)
+  10. English (US) - English (Dvorak, Macintosh, ANSI)        26. English (US) - English (intl., with AltGr dead keys)
+  11. English (US) - English (Dvorak, Macintosh, ISO)         27. English (US) - English (programmer Dvorak)
+  12. English (US) - English (Dvorak, alt. intl.)             28. English (US) - English (the divide/multiply toggle the layout)
+  13. English (US) - English (Dvorak, intl., with dead keys)  29. English (US) - Hawaiian
+  14. English (US) - English (Dvorak, one-handed, left)       30. English (US) - Russian (US, phonetic)
+  15. English (US) - English (Dvorak, one-handed, right)      31. English (US) - Serbo-Croatian (US)
+  16. English (US) - English (Macintosh, ABC, ANSI)           32. Other
+Keyboard layout: 1
+...

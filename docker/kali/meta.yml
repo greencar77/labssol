@@ -1,0 +1,11 @@
+completed: 2026-11-10
+labId: J5V1E3
+tags:
+  - nix_com_apt
+docker:
+  image:
+    - kalilinux/kali-rolling
+  cmd:
+    - container_run
+    - container_start
+

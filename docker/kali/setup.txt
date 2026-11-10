@@ -1,0 +1,40 @@
+$ docker pull kalilinux/kali-rolling
+Using default tag: latest
+latest: Pulling from kalilinux/kali-rolling
+9d50da63d2c1: Pull complete
+Digest: sha256:6ec743d9fc5cd397451eeddeff3869bcfab5de9bd5dec5b1f34cbfbd80313073
+Status: Downloaded newer image for kalilinux/kali-rolling:latest
+docker.io/kalilinux/kali-rolling:latest
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview kalilinux/kali-rolling
+
+--------------
+
+$ docker run --name kali kalilinux/kali-rolling:latest
+
+
+
+(nothing)
+---
+
+
+docker rm -f kali
+
+----
+
+$ docker run -it --name kali kalilinux/kali-rolling:latest
+┌──(root㉿3946da2451c2)-[/]
+└─#
+
+
+----
+
+if stopped, then
+
+$ docker start -i kali
+┌──(root㉿3946da2451c2)-[/]
+└─#
+
+
+
