@@ -1,8 +1,10 @@
-completed: 2026-11-09
-labId: J5V1E3
+completed: 2026-11-11
+labId: RWDSPU
 docker:
   image:
-    - hello-world
+    - alpine
   cmd:
+    - container_run
     - container_start
-    - container_logs
+    - image_history
+    - image_inspect
