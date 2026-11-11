@@ -1,0 +1,8 @@
+completed: 2026-11-09
+labId: J5V1E3
+docker:
+  image:
+    - hello-world
+  cmd:
+    - container_start
+    - container_logs

@@ -1,0 +1,90 @@
+$ docker image pull alpine:latest
+latest: Pulling from library/alpine
+881fc932939e: Pull complete
+86ff264fe568: Download complete
+c35a7d82b8fa: Download complete
+Digest: sha256:f59abe656b692d901e184be3445e084786602108599d2a51d229c0f5a48c71bf
+Status: Downloaded newer image for alpine:latest
+docker.io/library/alpine:latest
+
+
+---
+
+
+globally
+
+export MSYS_NO_PATHCONV=1
+
+---
+
+$ MSYS_NO_PATHCONV=1 docker run -it --rm --entrypoint /bin/sh alpine:latest
+/ #
+---
+
+$ docker run -it --rm --entrypoint /bin/sh alpine:latest
+/ #
+
+----
+
+
+/ # cat /etc/os-release
+NAME="Alpine Linux"
+ID=alpine
+VERSION_ID=3.24.4
+PRETTY_NAME="Alpine Linux v3.24"
+HOME_URL="https://alpinelinux.org/"
+BUG_REPORT_URL="https://gitlab.alpinelinux.org/alpine/aports/-/issues"
+
+----
+
+mkdir /data
+cd /data
+
+echo "Hello Docker" > hello.txt
+echo "Another file" > second.txt
+
+mkdir documents
+echo "My document" > documents/doc.txt
+
+ls -lR /
+
+----
+
+/data # ls -lR
+.:
+total 12
+drwxr-xr-x    2 root     root          4096 Nov 11 22:26 documents
+-rw-r--r--    1 root     root            13 Nov 11 22:25 hello.txt
+-rw-r--r--    1 root     root            13 Nov 11 22:25 second.txt
+
+./documents:
+total 4
+-rw-r--r--    1 root     root            12 Nov 11 22:26 doc.txt
+
+
+---
+
+another terminal
+
+$ docker diff sharp_almeida
+A /data
+A /data/second.txt
+A /data/documents
+A /data/documents/doc.txt
+A /data/hello.txt
+C /root
+A /root/.ash_history
+
+-----
+
+$ docker image history alpine:latest
+IMAGE          CREATED      CREATED BY                                      SIZE      COMMENT
+f59abe656b69   6 days ago   CMD ["/bin/sh"]                                 0B        buildkit.dockerfile.v0
+<missing>      6 days ago   ADD alpine-minirootfs-3.24.4-x86_64.tar.gz /…   9.09MB    buildkit.dockerfile.v0
+
+----
+
+$ docker inspect alpine --format '{{.Path}} {{json .Args}}'
+C:/Program Files/Git/usr/bin/sh []
+
+
